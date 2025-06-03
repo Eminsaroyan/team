@@ -29,22 +29,22 @@ function App() {
         <p className="cursor-pointer">Առաջարկներ</p>
         <p className="cursor-pointer">Օգնություն</p>
       </nav>
-      <div className='grid grid-cols-2 justify-items-center gap-4 mt-[30px] m-[90px] '>
-        <div className="flex justify-between items-start w-[600px] pl-[30px] bg-[#01415f] rounded-[12px] mb-[10px] "  >
-          <p className='text-[#ffffff] mt-[12px] text-[30px] font-[900] font-serif'     >Բջջային կապ</p>
-          <img src="https://www.telecomarmenia.am/images/promo/1/16509682370213.png" alt="" className="rounded-[12px]"/>
+      <div className="grid grid-cols-2 justify-items-center gap-4 mt-[30px] m-[90px]">
+        <div className="group flex justify-between items-start w-[600px] pl-[30px] bg-[#01415f] rounded-[12px] mb-[10px] cursor-pointer">
+          <p className="text-[#ffffff] mt-[12px] text-[30px] font-[900] font-serif group-hover:text-[#FF0000] transition-colors duration-300">Բջջային կապ</p>
+          <img src="https://www.telecomarmenia.am/images/promo/1/16509682370213.png" alt="" className="rounded-[12px] object-cover"/>
         </div>
-        <div className="flex justify-between items-start w-[600px] pl-[30px] bg-[#01415f] rounded-[12px] mb-[10px] "  >
-          <p className='text-[#ffffff] mt-[12px] text-[30px] font-[900] font-serif'     >Ֆիքսված կապ</p>
-          <img src="https://www.telecomarmenia.am/images/promo/1/1650969068409.png" alt="" className="rounded-[12px]" />
+        <div className="group flex justify-between items-start w-[600px] pl-[30px] bg-[#01415f] rounded-[12px] mb-[10px] cursor-pointer">
+          <p className="text-[#ffffff] mt-[12px] text-[30px] font-[900] font-serif group-hover:text-[#FF0000] transition-colors duration-300">Ֆիքսված կապ</p>
+          <img src="https://www.telecomarmenia.am/images/promo/1/1650969068409.png" alt="" className="rounded-[12px] object-cover" />
         </div>
-        <div className="flex justify-between items-start w-[600px] pl-[30px] bg-[#01415f] rounded-[12px]"  >
-          <p className='text-[#ffffff] mt-[12px] text-[30px] font-[900] font-serif'>Հավելվածներ</p>
-          <img src="https://www.telecomarmenia.am/images/promo/1/16509690498367.png" alt="" className="rounded-[12px]"/>
+        <div className="group flex justify-between items-start w-[600px] pl-[30px] bg-[#01415f] rounded-[12px] cursor-pointer">
+          <p className="text-[#ffffff] mt-[12px] text-[30px] font-[900] font-serif group-hover:text-[#FF0000] transition-colors duration-300">Հավելվածներ</p>
+          <img src="https://www.telecomarmenia.am/images/promo/1/16509690498367.png" alt="" className="rounded-[12px] object-cover"/>
         </div>
-        <div className="flex justify-between items-start w-[600px] pl-[30px] bg-[#01415f] rounded-[12px]"  >
-          <p className='text-[#ffffff] mt-[12px] text-[30px] font-[900] font-serif'>Ինտերնետ և TV</p>
-          <img src="https://www.telecomarmenia.am/images/promo/1/16510462295535.png" alt=""className="rounded-[12px]" />
+        <div className="group flex justify-between items-start w-[600px] pl-[30px] bg-[#01415f] rounded-[12px] cursor-pointer">
+          <p className="text-[#ffffff] mt-[12px] text-[30px] font-[900] font-serif group-hover:text-[#FF0000] transition-colors duration-300">Ինտերնետ և TV</p>
+          <img src="https://www.telecomarmenia.am/images/promo/1/16510462295535.png" alt=""className="rounded-[12px] object-cover" />
         </div>
       </div>
       <div>
