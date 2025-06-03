@@ -29,22 +29,22 @@ function App() {
         <p className="cursor-pointer">Առաջարկներ</p>
         <p className="cursor-pointer">Օգնություն</p>
       </nav>
-      <div>
-        <div>
-          <p>Բջջային կապ</p>
-          <img src="https://www.telecomarmenia.am/images/promo/1/16509682370213.png" alt=""/>
+      <div className='grid grid-cols-2 justify-items-center gap-4 mt-[30px] m-[90px] '>
+        <div className="flex justify-between items-start w-[600px] pl-[30px] bg-[#01415f] rounded-[12px] mb-[10px] "  >
+          <p className='text-[#ffffff] mt-[12px] text-[30px] font-[900] font-serif'     >Բջջային կապ</p>
+          <img src="https://www.telecomarmenia.am/images/promo/1/16509682370213.png" alt="" className="rounded-[12px]"/>
         </div>
-        <div>
-          <p>Ֆիքսված կապ</p>
-          <img src="https://www.telecomarmenia.am/images/promo/1/1650969068409.png" alt="" />
+        <div className="flex justify-between items-start w-[600px] pl-[30px] bg-[#01415f] rounded-[12px] mb-[10px] "  >
+          <p className='text-[#ffffff] mt-[12px] text-[30px] font-[900] font-serif'     >Ֆիքսված կապ</p>
+          <img src="https://www.telecomarmenia.am/images/promo/1/1650969068409.png" alt="" className="rounded-[12px]" />
         </div>
-        <div>
-          <p>Հավելվածներ</p>
-          <img src="https://www.telecomarmenia.am/images/promo/1/16509690498367.png" alt="" />
+        <div className="flex justify-between items-start w-[600px] pl-[30px] bg-[#01415f] rounded-[12px]"  >
+          <p className='text-[#ffffff] mt-[12px] text-[30px] font-[900] font-serif'>Հավելվածներ</p>
+          <img src="https://www.telecomarmenia.am/images/promo/1/16509690498367.png" alt="" className="rounded-[12px]"/>
         </div>
-        <div>
-          <p>Ինտերնետ և TV</p>
-          <img src="https://www.telecomarmenia.am/images/promo/1/16510462295535.png" alt="" />
+        <div className="flex justify-between items-start w-[600px] pl-[30px] bg-[#01415f] rounded-[12px]"  >
+          <p className='text-[#ffffff] mt-[12px] text-[30px] font-[900] font-serif'>Ինտերնետ և TV</p>
+          <img src="https://www.telecomarmenia.am/images/promo/1/16510462295535.png" alt=""className="rounded-[12px]" />
         </div>
       </div>
     </>
