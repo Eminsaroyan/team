@@ -47,6 +47,11 @@ function App() {
           <img src="https://www.telecomarmenia.am/images/promo/1/16510462295535.png" alt=""className="rounded-[12px]" />
         </div>
       </div>
+      <div>
+        <h1>Դարձեք Team բաժանորդ</h1>
+        <p>Միացե՛ք մեզ ձեր համարով և օգտվեք Team-ի բոլոր առավելություններից:</p>
+        <button>Միանալ</button>
+      </div>
     </>
   )
 }
