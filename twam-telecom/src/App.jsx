@@ -19,6 +19,16 @@ function App() {
           <p className='m-[5px] p-[12px] cursor-pointer hover:bg-[#455666] transition-colors duration-1000'>Անձնական գրասենյակ</p>
         </div>
       </div>
+      <div>
+        <img src="https://www.telecomarmenia.am/img/logo.svg?v=1" alt="" />
+        <p>Սակագներ</p>
+        <p>Ինտերնետ</p>
+        <p>Ծառայություններ</p>
+        <p>Ռոումինգ</p>
+        <p>Առցանց խանութ</p>
+        <p>Առաջարկներ</p>
+        <p>Օգնություն</p>
+      </div>
     </>
   )
 }
