@@ -6,7 +6,7 @@ function App() {
 
   return (
     <>
-      <div className="h-[45px] flex justify-around bg-[#01415f] text-[#ffffff]">
+      <div className="h-[45px] flex justify-around items-center bg-[#01415f] text-[#ffffff]">
         <div className="flex items-center ">
           <p className='m-[5px] p-[12px] hover:bg-[#0A6C9F] cursor-pointer transition-colors duration-1000'>Անհատներին</p>
           <p className='m-[5px] p-[12px]  hover:bg-[#0A6C9F] cursor-pointer transition-colors duration-1000'>Բիզնես</p>
@@ -30,12 +30,22 @@ function App() {
         <p className='cursor-pointer'>Օգնություն</p>
       </nav>
       <div>
-        <div className="w-[500px] p-[60px] bg-[#01415f] ">
-          <p className=''>Բջջային կապ</p>
+        <div>
+          <p>Բջջային կապ</p>
+          <img src="https://www.telecomarmenia.am/images/promo/1/16509682370213.png" alt=""/>
         </div>
-        <div></div>
-        <div></div>
-        <div></div>
+        <div>
+          <p>Ֆիքսված կապ</p>
+          <img src="https://www.telecomarmenia.am/images/promo/1/1650969068409.png" alt="" />
+        </div>
+        <div>
+          <p>Հավելվածներ</p>
+          <img src="https://www.telecomarmenia.am/images/promo/1/16509690498367.png" alt="" />
+        </div>
+        <div>
+          <p>Ինտերնետ և TV</p>
+          <img src="https://www.telecomarmenia.am/images/promo/1/16510462295535.png" alt="" />
+        </div>
       </div>
     </>
   )
