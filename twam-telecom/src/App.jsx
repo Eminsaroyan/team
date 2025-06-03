@@ -19,16 +19,17 @@ function App() {
           <p className='m-[5px] p-[12px] cursor-pointer hover:bg-[#455666] transition-colors duration-1000'>Անձնական գրասենյակ</p>
         </div>
       </div>
-      <div>
-        <img src="https://www.telecomarmenia.am/img/logo.svg?v=1" alt="" />
-        <p>Սակագներ</p>
-        <p>Ինտերնետ</p>
-        <p>Ծառայություններ</p>
-        <p>Ռոումինգ</p>
-        <p>Առցանց խանութ</p>
-        <p>Առաջարկներ</p>
-        <p>Օգնություն</p>
-      </div>
+      <nav className='flex justify-evenly items-center m-[10px]'>
+        <img src="https://www.telecomarmenia.am/img/logo.svg?v=1" alt="" className='cursor-pointer'/>
+        <p className='cursor-pointer'>Սակագներ</p>
+        <p className='cursor-pointer'>Ինտերնետ</p>
+        <p className='cursor-pointer'>Ծառայություններ</p>
+        <p className='cursor-pointer'>Ռոումինգ</p>
+        <p className='cursor-pointer'>Առցանց խանութ</p>
+        <p className='cursor-pointer'>Առաջարկներ</p>
+        <p className='cursor-pointer'>Օգնություն</p>
+      </nav>
+      
     </>
   )
 }
