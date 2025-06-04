@@ -78,15 +78,15 @@ function App() {
           </div>
         </div>
       </div>
-      <div>
-        <div>
-          <h1>Հավելված My Team</h1>
-          <p>Ներբեռնե՛ք My Team-ը iOS և Android համակարգերի համար</p>
-          <p>Կատարե՛ք վճարումներ, ստացեք բոնուսներ, շեյքեք և օգտվեք այլ հնարավորություններից</p>
-          <img src="https://www.telecomarmenia.am/img/redesign/app_store.png" alt="" />
+      <div className='mt-[60px] flex items-center justify-around'>
+        <div className='flex flex-col items-start'>
+          <h1 className='text-[60px] mb-[20px]'>Հավելված My Team</h1>
+          <p className='text-[20px] mb-[20px] '>Ներբեռնե՛ք My Team-ը iOS և Android համակարգերի համար</p>
+          <p className='text-[20px] mb-[20px] w-[580px]'>Կատարե՛ք վճարումներ, ստացեք բոնուսներ, շեյքեք և օգտվեք այլ հնարավորություններից</p>
+          <img src="https://www.telecomarmenia.am/img/redesign/app_store.png" alt="" className='mb-[20px]' />
           <img src="https://www.telecomarmenia.am/img/redesign/google_play.png" alt="" />
         </div>
-        <img src="https://www.telecomarmenia.am/img/redesign/app-img.png" alt="" />
+        <img src="https://www.telecomarmenia.am/img/redesign/app-img.png" alt="" className='w-[30%]'/>
       </div>
     </>
   )
