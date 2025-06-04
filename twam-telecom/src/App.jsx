@@ -52,6 +52,26 @@ function App() {
         <p className=' mb-[23px] font-[900] font-serif'>Միացե՛ք մեզ ձեր համարով և օգտվեք Team-ի բոլոր առավելություններից:</p>
         <button className='pt-[15px] pb-[15px] pl-[100px] pr-[100px] bg-[#FF0000] font-[900] text-[15px] text-[#ffffff] rounded-[12px] border-none cursor-pointer'>Միանալ</button>
       </div>
+      <div >
+        <h1 className=''>Լրահոս</h1>
+        <div>
+          <div>
+            <img src="https://www.telecomarmenia.am/images/news/1/17478128501455.jpeg" alt=""/>
+            <p>21 may</p>
+            <p>Team Telecom Armenia-ն Տավուշում ամբողջովին վերազինել է բջջային ցանցը</p>
+          </div>
+          <div>
+            <img src="https://www.telecomarmenia.am/images/news/1/17474608108675.png" alt=""/>
+            <p>16 may</p>
+            <p>Արի՛ ժամանակի միջով ճամփորդելու. Team-ի Կապի թանգարանը միացել է թանգարանային տոներին</p>
+          </div>
+          <div>
+            <img src="https://www.telecomarmenia.am/images/news/2/17460160429221.jpeg" alt="" />
+            <p>30 April</p>
+            <p>Team Telecom Armenia-ն ընդլայնում է միջազգային գործակցությունը․ ԱՄՆ առաջատար լրատվական ալիք Newsmax-ը կհեռարձակվի Հայաստանում</p>
+          </div>
+        </div>
+      </div>
     </>
   )
 }
