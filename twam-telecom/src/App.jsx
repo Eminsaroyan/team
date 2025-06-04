@@ -86,7 +86,47 @@ function App() {
           <img src="https://www.telecomarmenia.am/img/redesign/app_store.png" alt="" className='mb-[20px]' />
           <img src="https://www.telecomarmenia.am/img/redesign/google_play.png" alt="" />
         </div>
-        <img src="https://www.telecomarmenia.am/img/redesign/app-img.png" alt="" className='w-[30%]'/>
+        <img src="https://www.telecomarmenia.am/img/redesign/app-img.png" alt="" className='w-[30%]' />
+      </div>
+      <div>
+        <img src="https://www.telecomarmenia.am/img/logo-light.svg?v=1" alt="" />
+        <div>
+          <h5>Ընկերության մասին</h5>
+          <p>Մեր մասին</p>
+          <p>Կապի թանգարան</p>
+          <p>Նորություններ</p>
+          <p>Աշխատանք Տելեկոմ Արմենիայում</p>
+          <p>Արդյունքներ և հաշվետվություններ</p>
+          <p>Գործարար Էթիկա և Կոմպլայենս</p>
+          <p>Կայուն զարգացում</p>
+          <p>Բաժնետերերին</p>
+        </div>
+        <div>
+          <h5>Տեղեկատվություն</h5>
+          <p>Ընդհանուր դրույթներ և պայմաններ</p>
+          <p>Անվտանգություն</p>
+          <p>E-shop պայմաններ</p>
+          <p>Ապառիկ վաճառքի պայմաններ</p>
+          <p>Առաքման պայմաններ</p>
+          <p>Վաճառքի և սպասարկման կենտրոններ</p>
+          <p>Ծածկույթ</p>
+          <p>Բջջային ցանցի ծածկույթ</p>
+          <p>Team ինտերնետի հասանելիության ծածկույթ</p>
+          <p>Օգտակար փաստաթղթեր</p>
+          <p>Գործընկերներին և մատակարարներին</p>
+          <p>Գաղտնիության քաղաքականություն</p>
+          <p>ՀՀ մարզերի կոդեր</p>
+        </div>
+        <div>
+          <h5>Team հավելվածներ</h5>
+          <p>TeamTV</p>
+          <p>My Team</p>
+          <p>Team Pay</p>
+          <p>Team Energy</p>
+        </div>
+      </div>
+      <div>
+        <p>Team © 2025</p>
       </div>
     </>
   )
