@@ -76,10 +76,18 @@ function App() {
               Team Telecom Armenia-ն ընդլայնում է միջազգային գործակցությունը․ ԱՄՆ առաջատար լրատվական ալիք...
             </p>
           </div>
-
         </div>
       </div>
-
+      <div>
+        <div>
+          <h1>Հավելված My Team</h1>
+          <p>Ներբեռնե՛ք My Team-ը iOS և Android համակարգերի համար</p>
+          <p>Կատարե՛ք վճարումներ, ստացեք բոնուսներ, շեյքեք և օգտվեք այլ հնարավորություններից</p>
+          <img src="https://www.telecomarmenia.am/img/redesign/app_store.png" alt="" />
+          <img src="https://www.telecomarmenia.am/img/redesign/google_play.png" alt="" />
+        </div>
+        <img src="https://www.telecomarmenia.am/img/redesign/app-img.png" alt="" />
+      </div>
     </>
   )
 }
