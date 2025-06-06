@@ -3,6 +3,8 @@ import './index.css';
 import Header from '../moduls/Header';
 import Bajiner from '../moduls/Bajiner';
 import Mianal from '../moduls/Mianal';
+import Lrahos from '../moduls/Lrahos';
+import Application from '../moduls/Application';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -12,16 +14,8 @@ function App() {
     <Header />
     <Bajiner />
     <Mianal />
-      <div className='mt-[60px] flex items-center justify-around'>
-        <div className='flex flex-col items-start'>
-          <h1 className='text-[60px] mb-[20px]'>Հավելված My Team</h1>
-          <p className='text-[20px] mb-[20px] '>Ներբեռնե՛ք My Team-ը iOS և Android համակարգերի համար</p>
-          <p className='text-[20px] mb-[20px] w-[580px]'>Կատարե՛ք վճարումներ, ստացեք բոնուսներ, շեյքեք և օգտվեք այլ հնարավորություններից</p>
-          <img src="https://www.telecomarmenia.am/img/redesign/app_store.png" alt="" className='mb-[20px]' />
-          <img src="https://www.telecomarmenia.am/img/redesign/google_play.png" alt="" />
-        </div>
-        <img src="https://www.telecomarmenia.am/img/redesign/app-img.png" alt="" className='w-[30%]' />
-      </div>
+    <Lrahos />
+<Application />
       <div className='bg-[#01415f] flex text-[#ffffff] items-start justify-evenly pt-[30px] pb-[100px]'>
         <img src="https://www.telecomarmenia.am/img/logo-light.svg?v=1" alt="" />
         <div className='leading-[32px] cursor-pointer'>
