@@ -11,11 +11,11 @@ function App() {
 
   return (
     <>
-    <Header />
-    <Bajiner />
-    <Mianal />
-    <Lrahos />
-<Application />
+      <Header />
+      <Bajiner />
+      <Mianal />
+      <Lrahos />
+      <Application />
       <div className='bg-[#01415f] flex text-[#ffffff] items-start justify-evenly pt-[30px] pb-[100px]'>
         <img src="https://www.telecomarmenia.am/img/logo-light.svg?v=1" alt="" />
         <div className='leading-[32px] cursor-pointer'>
