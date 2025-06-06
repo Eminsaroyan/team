@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './index.css';
 import Header from '../moduls/Header';
 import Bajiner from '../moduls/Bajiner';
+import Mianal from '../moduls/Mianal';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -10,37 +11,7 @@ function App() {
     <>
     <Header />
     <Bajiner />
-      <div className="flex flex-col items-center pt-[30px] pb-[40px] bg-[#01415f] text-[#ffffff] ">
-        <h1 className='text-[65px] mb-[12px] font-[900]'>Դարձեք Team բաժանորդ</h1>
-        <p className=' mb-[23px] font-[900] font-serif'>Միացե՛ք մեզ ձեր համարով և օգտվեք Team-ի բոլոր առավելություններից:</p>
-        <button className='pt-[15px] pb-[15px] pl-[100px] pr-[100px] bg-[#FF0000] font-[900] text-[15px] text-[#ffffff] rounded-[12px] border-none cursor-pointer'>Միանալ</button>
-      </div>
-      <div className="flex flex-col items-center mt-[40px]">
-        <h1 className="text-[32px] font-bold mb-[20px]">Լրահոս</h1>
-        <div className="grid grid-cols-3  gap-[20px] w-full max-w-[1200px] px-[20px]">
-          <div className="flex flex-col items-start border border-[#9E9E9E] rounded-[12px] p-[12px] ">
-            <img src="https://www.telecomarmenia.am/images/news/1/17478128501455.jpeg" alt="" className="w-full rounded-[12px]" />
-            <p className="mt-[6px] text-[#9E9E9E] text-[11px]">21 մայիս</p>
-            <p className="text-[18px] font-medium mt-[6px]">
-              Team Telecom Armenia-ն Տավուշում ամբողջովին վերազինել է բջջային ցանցը
-            </p>
-          </div>
-          <div className="flex flex-col items-start border border-[#9E9E9E] rounded-[12px] p-[12px] ">
-            <img src="https://www.telecomarmenia.am/images/news/1/17474608108675.png" alt="" className="w-full rounded-[12px] object-cover" />
-            <p className="mt-[6px] text-[#9E9E9E] text-[11px]">16 մայիս</p>
-            <p className="text-[18px] font-medium mt-[6px]">
-              Արի՛ ժամանակի միջով ճամփորդելու. Team-ի Կապի թանգարանը միացել է թանգարանային տոներին
-            </p>
-          </div>
-          <div className="flex flex-col items-start border border-[#9E9E9E]  rounded-[12px] p-[12px]">
-            <img src="https://www.telecomarmenia.am/images/news/2/17460160429221.jpeg" alt="" className="w-full rounded-[12px] " />
-            <p className="mt-[6px] text-[#9E9E9E] text-[11px]">30 ապրիլ</p>
-            <p className="text-[18px] font-medium mt-[6px]">
-              Team Telecom Armenia-ն ընդլայնում է միջազգային գործակցությունը․ ԱՄՆ առաջատար լրատվական ալիք...
-            </p>
-          </div>
-        </div>
-      </div>
+    <Mianal />
       <div className='mt-[60px] flex items-center justify-around'>
         <div className='flex flex-col items-start'>
           <h1 className='text-[60px] mb-[20px]'>Հավելված My Team</h1>
