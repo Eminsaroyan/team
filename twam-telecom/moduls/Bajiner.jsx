@@ -10,7 +10,7 @@ const data = [
 
 export default function () {
     return (
-        <div className="grid grid-cols-2 justify-items-center gap-4 mt-[30px] m-[90px]">
+        <div className="grid grid-cols-2 justify-items-center gap-4 mt-[30px] m-[90px] lg:grid-cols-2">
             {data.map((el) => (
                 <Maser key={el.id} id={el.id} name={el.name} image={el.image} />
             ))}
