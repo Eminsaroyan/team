@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import './index.css';
 import Header from '../moduls/Header';
+import Info from '../moduls/Info';
 import Bajiner from '../moduls/Bajiner';
 import Mianal from '../moduls/Mianal';
 import Lrahos from '../moduls/Lrahos';
@@ -12,7 +13,8 @@ function App() {
 
   return (
     <>
-        <Header />
+      <Header />
+      <Info />
       <Bajiner />
       <Mianal />
       <Lrahos />
