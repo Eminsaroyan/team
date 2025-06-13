@@ -54,7 +54,7 @@ export default function NewsSlider() {
     return (
         <div className="">
             <Swiper
-                modules={[Navigation, Autoplay]} // ավելացրել ենք Autoplay-ը modules-ի մեջ
+                modules={[Navigation, Autoplay]}
                 spaceBetween={10}
                 slidesPerView={1}
                 slidesPerGroup={1}
@@ -62,7 +62,7 @@ export default function NewsSlider() {
                 loop={true}
                 autoplay={{
                     delay: 2000, 
-                    disableOnInteraction: false, // interaction-ից հետո շարունակի
+                    disableOnInteraction: false, 
                 }}
             >
                 {data.map((el) => (
