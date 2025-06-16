@@ -1,6 +1,7 @@
 import Fut from '../moduls/Fut';
 import Biznesbajin from './Biznesbajin';
 import Biznesbajiner from './Biznesbajiner';
+import Biznesfoot from './Biznesfoot';
 import Kapisakagner from './Kapisakagner';
 
 export default function Business() {
@@ -10,6 +11,7 @@ export default function Business() {
         <Biznesbajin />
         <Kapisakagner />
         <Biznesbajiner />
+        <Biznesfoot />
       </div>
       <Fut />
     </>
