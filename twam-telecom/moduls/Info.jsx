@@ -1,6 +1,6 @@
 import Masmas from "./Info-mas";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -54,15 +54,16 @@ export default function NewsSlider() {
     return (
         <div className="">
             <Swiper
-                modules={[Navigation, Autoplay]}
+                modules={[Navigation, Autoplay, Pagination]}
                 spaceBetween={10}
                 slidesPerView={1}
                 slidesPerGroup={1}
                 navigation
+                pagination={{ clickable: true }}
                 loop={true}
                 autoplay={{
-                    delay: 2000, 
-                    disableOnInteraction: false, 
+                    delay: 2000,
+                    disableOnInteraction: false,
                 }}
             >
                 {data.map((el) => (

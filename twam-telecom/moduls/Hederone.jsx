@@ -40,7 +40,7 @@ const Headerone = () => {
           className={`text-[#ffffff] p-[12px] flex items-center transition-colors duration-1000 ${pathname === '/eshop' ? 'bg-[#0A6C9F]' : 'hover:bg-[#0A6C9F]'
             }`}
         >
-          <img src="./eshop-icon.svg" alt="" className="mr-[12px]" />
+          <img src="./public/eshop-icon.svg" alt="" className="mr-[12px]" />
           E-shop
         </Link>
       </div>
