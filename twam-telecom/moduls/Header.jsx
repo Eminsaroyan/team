@@ -1,18 +1,16 @@
 import Hederone from "./Hederone";
-import { Link } from "react-router-dom";
 
 export default function () {
   return (
     <div>
       <Hederone />
       <nav className="flex justify-evenly items-center m-[10px]">
-        <Link to="/">
-          <img
-            src="https://www.telecomarmenia.am/img/logo.svg?v=1"
-            alt="Telecom Armenia logo"
-            className="cursor-pointer"
-          />
-        </Link>
+        <img
+          src="https://www.telecomarmenia.am/img/logo.svg?v=1"
+          alt="Logo"
+          className="cursor-pointer"
+          onClick={(e) => e.preventDefault()}
+        />
         <p className="cursor-pointer">Սակագներ</p>
         <p className="cursor-pointer">Ինտերնետ</p>
         <p className="cursor-pointer">Ծառայություններ</p>

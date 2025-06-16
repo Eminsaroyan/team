@@ -1,35 +1,19 @@
-import { Routes, Route } from 'react-router-dom';
-
-import './index.css';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import Header from '../moduls/Header';
-import Info from '../moduls/Info';
-import Bajiner from '../moduls/Bajiner';
-import Apranq from '../moduls/Apranq';
-import Mianal from '../moduls/Mianal';
-import Lrahos from '../moduls/Lrahos';
-import Application from '../moduls/Application';
-import Fut from '../moduls/Fut';
-import Cart from '../moduls/Cart'; 
+import Cart from '../moduls/Cart';
+import Anhatner from '../moduls/Anhatner';
+import Business from '../moduls/Business';
+import Eshop from '../moduls/Eshop';
 
 function App() {
   return (
     <>
       <Header />
       <Routes>
-        <Route
-          path="/"
-          element={
-            <>
-              <Info />
-              <Bajiner />
-              <Apranq />
-              <Mianal />
-              <Lrahos />
-              <Application />
-              <Fut />
-            </>
-          }
-        />
+        <Route path="/" element={<Navigate to="/anhatner" replace />} />
+        <Route path="/anhatner" element={<Anhatner />} />
+        <Route path="/business" element={<Business />} />
+        <Route path="/eshop" element={<Eshop />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </>

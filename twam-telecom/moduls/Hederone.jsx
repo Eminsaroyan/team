@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useCartStore } from './store';
 import { ShoppingCart } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
-const Header = () => {
+const Headerone = () => {
+  const location = useLocation();
+  const pathname = location.pathname;
+
   const cartCount = useCartStore((state) =>
     state.cart.reduce((total, item) => total + item.quantity, 0)
   );
@@ -18,16 +21,28 @@ const Header = () => {
   return (
     <div className="h-[45px] flex justify-around items-center bg-[#01415f] text-[#ffffff]">
       <div className="flex items-center">
-        <p className="m-[5px] p-[12px] hover:bg-[#0A6C9F] cursor-pointer transition-colors duration-1000">
+        <Link
+          to="/anhatner"
+          className={`p-[12px] transition-colors text-[#ffffff] duration-1000 ${pathname === '/anhatner' ? 'bg-[#0A6C9F]' : 'hover:bg-[#0A6C9F]'
+            }`}
+        >
           Անհատներին
-        </p>
-        <p className="m-[5px] p-[12px] hover:bg-[#0A6C9F] cursor-pointer transition-colors duration-1000">
+        </Link>
+        <Link
+          to="/business"
+          className={`text-[#ffffff]  p-[12px] transition-colors duration-1000 ${pathname === '/business' ? 'bg-[#0A6C9F]' : 'hover:bg-[#0A6C9F]'
+            }`}
+        >
           Բիզնես
-        </p>
-        <p className="m-[5px] p-[12px] hover:bg-[#0A6C9F] cursor-pointer transition-colors duration-1000 flex items-center">
+        </Link>
+        <Link
+          to="/eshop"
+          className={`text-[#ffffff] p-[12px] flex items-center transition-colors duration-1000 ${pathname === '/eshop' ? 'bg-[#0A6C9F]' : 'hover:bg-[#0A6C9F]'
+            }`}
+        >
           <img src="./eshop-icon.svg" alt="" className="mr-[12px]" />
           E-shop
-        </p>
+        </Link>
       </div>
 
       <div className="flex items-center">
@@ -45,7 +60,7 @@ const Header = () => {
           Անձնական գրասենյակ
         </p>
 
-        <Link to="/Cart" className="relative ml-4">
+        <Link to="/Cart" className="relative ml-4 text-[#ffffff]">
           <ShoppingCart />
           {cartCount > 0 && (
             <span className="absolute -top-2 -right-2 bg-red-600 text-white text-xs rounded-full px-2">
@@ -58,4 +73,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Headerone;
