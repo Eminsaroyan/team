@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
 import Apranqmas from './Apranqmas';
 const data = [
@@ -127,9 +127,8 @@ const data = [
 export default function Apranq() {
     return (
         <div className="mt-[40px] m-[20px] mb-[20px] ">
-            <h1 className="text-[32px] font-bold mb-[20px] text-center">Ապրանքներ</h1>
             <Swiper
-                modules={[Pagination]}
+                modules={[Pagination, Autoplay]}
                 spaceBetween={10}
                 slidesPerView={3}
                 slidesPerGroup={3}
@@ -137,6 +136,10 @@ export default function Apranq() {
                 className="pb-10"
                 loop={true}
                 speed={800}
+                autoplay={{
+                    delay: 2000,
+                    disableOnInteraction: false,
+                }}
             >
                 {data.map((el) => (
                     <SwiperSlide key={el.id}>

@@ -23,21 +23,21 @@ const Headerone = () => {
       <div className="flex items-center">
         <Link
           to="/anhatner"
-          className={`p-[12px] transition-colors text-[#ffffff] duration-1000 ${pathname === '/anhatner' ? 'bg-[#0A6C9F]' : 'hover:bg-[#0A6C9F]'
+          className={`p-[12px] transition-colors no-underline text-[#ffffff] duration-1000 ${pathname === '/anhatner' ? 'bg-[#0A6C9F]' : 'hover:bg-[#0A6C9F]'
             }`}
         >
           Անհատներին
         </Link>
         <Link
           to="/business"
-          className={`text-[#ffffff]  p-[12px] transition-colors duration-1000 ${pathname === '/business' ? 'bg-[#0A6C9F]' : 'hover:bg-[#0A6C9F]'
+          className={`text-[#ffffff] no-underline p-[12px] transition-colors duration-1000 ${pathname === '/business' ? 'bg-[#0A6C9F]' : 'hover:bg-[#0A6C9F]'
             }`}
         >
           Բիզնես
         </Link>
         <Link
           to="/eshop"
-          className={`text-[#ffffff] p-[12px] flex items-center transition-colors duration-1000 ${pathname === '/eshop' ? 'bg-[#0A6C9F]' : 'hover:bg-[#0A6C9F]'
+          className={`text-[#ffffff] p-[12px] no-underline flex items-center transition-colors duration-1000 ${pathname === '/eshop' ? 'bg-[#0A6C9F]' : 'hover:bg-[#0A6C9F]'
             }`}
         >
           <img src="./public/eshop-icon.svg" alt="" className="mr-[12px]" />
