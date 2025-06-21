@@ -10,10 +10,14 @@ import Equipment from '../moduls/Equipment';
 import Acs from '../moduls/Acs';
 import TopNumbers from '../moduls/Top-numbers';
 import Offers from '../moduls/Offers';
+import Teamtv from '../moduls/Teamtv';
+import Myteam from '../moduls/Myteam';
+import Teampay from '../moduls/Teampay';
+import Teamenergy from '../moduls/Teamenergy';
 
 function App() {
   const location = useLocation();
-  const hideHeaderOnPaths = ['/eshop','/smartphones','/numbers','/equipment','/acs','/top-numbers','/offers']; 
+  const hideHeaderOnPaths = ['/eshop', '/smartphones', '/numbers', '/equipment', '/acs', '/top-numbers', '/offers'];
 
   const shouldShowHeader = !hideHeaderOnPaths.includes(location.pathname);
 
@@ -32,6 +36,10 @@ function App() {
         <Route path="/acs" element={<Acs />} />
         <Route path="/top-numbers" element={<TopNumbers />} />
         <Route path="/offers" element={<Offers />} />
+        <Route path="/teamtv" element={<Teamtv />} />
+        <Route path="/myteam" element={<Myteam />} />
+        <Route path="/teampay" element={<Teampay />} />
+        <Route path="/teamenergy" element={<Teamenergy />} />
       </Routes>
     </>
   );

@@ -1,4 +1,5 @@
 import EshopNav from "./Eshop-nav";
+import Fut from "./Fut";
 import Headerone from "./Hederone";
 
 export default function (){
@@ -6,6 +7,8 @@ export default function (){
         <div>
             <Headerone />
             <EshopNav />
+
+            <Fut />
         </div>
     )
 }

@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 export default function () {
     return (
         <div>
@@ -30,12 +32,12 @@ export default function () {
                     <p className='text-[14px] text-[#c4c0c0]'>Գաղտնիության քաղաքականություն</p>
                     <p className='text-[14px] text-[#c4c0c0]'>ՀՀ մարզերի կոդեր</p>
                 </div>
-                <div className='leading-[30px] cursor-pointer'>
+                <div className='flex flex-col  leading-[30px]  cursor-pointer'>
                     <h2 className='mb-[12px]'>Team հավելվածներ</h2>
-                    <p className='text-[14px] text-[#c4c0c0]'>TeamTV</p>
-                    <p className='text-[14px] text-[#c4c0c0]'>My Team</p>
-                    <p className='text-[14px] text-[#c4c0c0]'>Team Pay</p>
-                    <p className='text-[14px] text-[#c4c0c0]'>Team Energy</p>
+                    <Link to="/teamtv" className='text-[14px] no-underline text-[#c4c0c0]  hover:underline transition-all duration-200'>TeamTV</Link>
+                    <Link to="/myteam" className='text-[14px] no-underline text-[#c4c0c0]  hover:underline transition-all duration-200'>My Team</Link>
+                    <Link to="/teampay" className='text-[14px] no-underline text-[#c4c0c0]  hover:underline transition-all duration-200'>Team Pay</Link>
+                    <Link to="/teamenergy" className='text-[14px] no-underline text-[#c4c0c0]  hover:underline transition-all duration-200'>Team Energy</Link>
                 </div>
             </div>
             <div className='flex justify-center bg-[#022739] text-[#ffffff] pt-[20px] pb-[20px]'>
