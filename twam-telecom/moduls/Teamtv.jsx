@@ -1,12 +1,14 @@
-import Teamtvlink from "./Teamtvlink";
 import Fut from "./Fut";
-import Teamtvgnahatakan from "./Teamtvgnahatakan";
+import AppById from "./Gnahatakan";
+import Havelvacimasin from "./Hvelvacimasin";
+import Teamlink from "./Teamlink";
 
 export default function () {
     return (
         <>
-            <Teamtvlink />
-            <Teamtvgnahatakan />
+            <Teamlink />
+            <AppById collectionName="TeamtV"  documentId="xCmp0Uc3J9yTxCkLDk27" />
+            <Havelvacimasin collectionName="TeamtV" documentId="KjiVHHaheXEin74vRwS8" />
             <Fut />
         </>
     )

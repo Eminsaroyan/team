@@ -1,6 +1,6 @@
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination,Autoplay } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import Buj from "./Eshopbajinmas";
@@ -33,7 +33,7 @@ export default function () {
         <div>
             <div className="">
                 <Swiper
-                    modules={[Navigation,Pagination, Autoplay]}
+                    modules={[Navigation, Pagination, Autoplay]}
                     spaceBetween={10}
                     slidesPerView={1}
                     slidesPerGroup={1}

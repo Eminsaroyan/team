@@ -15,7 +15,7 @@ export default function Apranqmas({ id, image, name, gin, aparic }) {
     };
 
     return (
-        <div className="mb-[25px] relative flex flex-col items-center border border-[#9E9E9E] w-[400px] h-[600px] rounded-[12px] p-[10px] hover:shadow-[0_4px_25px_rgba(0,0,0,0.2)] hover:scale-[1.02] transition-all duration-300">
+        <div className="mb-[25px] mt-[25px] relative flex flex-col items-center border border-[#9E9E9E] w-[400px] h-[600px] rounded-[12px] p-[10px] hover:shadow-[0_4px_25px_rgba(0,0,0,0.2)] hover:scale-[1.02] transition-all duration-300">
             <button onClick={handleHeartClick} className="absolute top-2 right-[25px]">
                 <Heart color={isInCart ? 'red' : 'gray'} fill={isInCart ? 'red' : 'none'} />
             </button>

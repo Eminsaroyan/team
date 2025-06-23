@@ -133,13 +133,13 @@ export default function Apranq() {
                 slidesPerView={3}
                 slidesPerGroup={3}
                 pagination={{ clickable: true }}
-                className="pb-10"
                 loop={true}
                 speed={800}
                 autoplay={{
                     delay: 2000,
                     disableOnInteraction: false,
                 }}
+                className="max-w-[1400px] mx-auto"
             >
                 {data.map((el) => (
                     <SwiperSlide key={el.id}>
