@@ -14,6 +14,7 @@ import Teamtv from '../moduls/Teamtv';
 import Myteam from '../moduls/Myteam';
 import Teampay from '../moduls/Teampay';
 import Teamenergy from '../moduls/Teamenergy';
+import Teamhavelvac from '../moduls/Teamhavelvac'
 
 function App() {
   const location = useLocation();
@@ -40,6 +41,7 @@ function App() {
         <Route path="/myteam" element={<Myteam />} />
         <Route path="/teampay" element={<Teampay />} />
         <Route path="/teamenergy" element={<Teamenergy />} />
+         <Route path="/teamhavelvac" element={<Teamhavelvac />} />
       </Routes>
     </>
   );

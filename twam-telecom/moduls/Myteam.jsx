@@ -1,9 +1,13 @@
 import Fut from "./Fut";
+import Myteam from "./Myteamgnahatakan";
+import Teamtvlink from "./Teamtvlink";
 
-export default function (){
+export default function () {
     return (
-        <div>
+        <>
+            <Teamtvlink />
+            <Myteam />
             <Fut />
-        </div>
+        </>
     )
 }

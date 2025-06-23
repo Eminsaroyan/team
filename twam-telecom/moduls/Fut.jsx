@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 export default function () {
     return (
         <div>
-            <div className='bg-[#01415f] flex text-[#ffffff] items-start justify-evenly pt-[30px] pb-[100px] sm:flex-col sm:items-center '>
+            <div className='bg-[#01415f] flex text-[#ffffff] items-start justify-evenly pt-[30px] pb-[100px]'>
                 <img src="https://www.telecomarmenia.am/img/logo-light.svg?v=1" alt="" />
                 <div className='leading-[32px] cursor-pointer'>
                     <h2 className='mb-[12px] text-[#c4c0c0]'>Ընկերության մասին</h2>
@@ -33,7 +33,9 @@ export default function () {
                     <p className='text-[14px] text-[#c4c0c0]'>ՀՀ մարզերի կոդեր</p>
                 </div>
                 <div className='flex flex-col  leading-[30px]  cursor-pointer'>
-                    <h2 className='mb-[12px]'>Team հավելվածներ</h2>
+                    <Link to="/teamhavelvac"   className="no-underline hover:underline text-black">
+                        <h2 className="text-[#c4c0c0]  hover:underline transition-all duration-200">Team հավելվածներ</h2>
+                    </Link>
                     <Link to="/teamtv" className='text-[14px] no-underline text-[#c4c0c0]  hover:underline transition-all duration-200'>TeamTV</Link>
                     <Link to="/myteam" className='text-[14px] no-underline text-[#c4c0c0]  hover:underline transition-all duration-200'>My Team</Link>
                     <Link to="/teampay" className='text-[14px] no-underline text-[#c4c0c0]  hover:underline transition-all duration-200'>Team Pay</Link>

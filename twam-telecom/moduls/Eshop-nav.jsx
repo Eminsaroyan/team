@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default function EshopNav() {
     return (
-        <nav className="flex justify-evenly items-center m-[10px] bg-blue-600 text-white p-4 rounded">
+        <nav className="flex justify-evenly items-center mb-[20px] pb-[5px] pt-[10px] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)]">
             <img
                 src="https://www.telecomarmenia.am/img/logo.svg?v=1"
                 alt="Logo"
