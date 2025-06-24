@@ -14,6 +14,7 @@ const breadcrumbMap = {
   "/vacharqi-kentronner": "Վաճառքի և սպասարկման կենտրոններ",
   "/tackuyt": "Ծածկույթ",
   "/bjjnayin-tsakuyt": "ջջային ցանցի ծածկույթ",
+  "/aparik": "Ապառիկ վաճառքի պայմաններ",
 };
 
 export default function Breadcrumb() {
