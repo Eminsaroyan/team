@@ -33,10 +33,10 @@ export default function Havelvacimasin({ collectionName, documentId }) {
   const { images = [], description, features = [] } = data;
 
   return (
-    <div className="max-w-[1230px] mx-auto mb-[50px] flex flex-col gap-[20px]">
+    <div className="max-w-[1250px] pl-[200px] pr-[200px] mx-auto mb-[50px] flex flex-col gap-[20px]">
       <div className="flex gap-[30px]">
-        <p className="text-[25px] font-semibold">iOS</p>
-        <p className="text-[25px] font-semibold">Android</p>
+        <p className="text-[25px] font-team">iOS</p>
+        <p className="text-[25px] font-team">Android</p>
       </div>
 
       {images.length === 5 ? (

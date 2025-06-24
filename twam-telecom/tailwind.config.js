@@ -6,8 +6,8 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        darkBlue: "#2c3843",
+      fontFamily: {
+        team: ['Team-Regular', 'Helvetica', 'Arial', 'sans-serif'],
       },
     },
   },

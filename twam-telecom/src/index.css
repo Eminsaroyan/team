@@ -12,19 +12,31 @@
   display: flex !important;
   justify-content: center;
   margin-top: 20px;
-  position: relative;
   gap: 8px;
 }
 
 .swiper-pagination-bullet {
-  width: 13px;
-  height: 13px;
-  background: #ccc;
-  opacity: 1;
+  width: 13px !important;
+  height: 13px !important;
+  background: #fff !important;
+  opacity: 1 !important;
   border-radius: 50%;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease !important;
 }
 
 .swiper-pagination-bullet-active {
-  background: #e90202;
+  background: #e90202 !important;
+}
+
+
+@font-face {
+  font-family: 'Team-Regular';
+  src: url('/fonts/Team-Regular.woff2') format('woff2');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Team-Regular';
+  src: url('/fonts/Team-Bold.woff2') format('woff2');
+  font-weight: 600; /* Ահա այստեղ է կարևոր */
 }
