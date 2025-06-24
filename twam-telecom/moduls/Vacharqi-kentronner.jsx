@@ -1,7 +1,13 @@
+import Breadcrumb from "./Breadcrumb";
+import Fut from "./Fut";
+import Map from "./Vacharqi-kentronnermap";
+
 export default function Vacharqi() {
     return (
-        <div>
-            <p>aspidhoij</p>
-        </div>
+        <>
+            <Breadcrumb />
+            <Map />
+            <Fut />
+        </>
     )
 }

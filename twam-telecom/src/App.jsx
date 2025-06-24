@@ -30,6 +30,9 @@ import Anvtangutyun from "../moduls/Anvtangutyun";
 import Eshoppaymaner from "../moduls/Eshoppaymaner";
 import Aparik from "../moduls/Aparik";
 import Arakum from "../moduls/Arakum";
+import Vacharqi from "../moduls/Vacharqi-kentronner";
+import Tackuyt from "../moduls/Tackuyt";
+import Bjj from "../moduls/Bjjnayin-tsakuyt";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -89,6 +92,9 @@ function App() {
         <Route path="/eshoppaymaner" element={<Eshoppaymaner />} />
         <Route path="/aparik" element={<Aparik />} />
         <Route path="/arakum" element={<Arakum />} />
+        <Route path="/vacharqi-kentronner" element={<Vacharqi />} />
+        <Route path="/tackuyt" element={<Tackuyt />} />
+        <Route path="/bjjnayin-tsakuyt" element={<Bjj />} />
       </Routes>
     </>
   );

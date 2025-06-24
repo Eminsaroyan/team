@@ -11,6 +11,9 @@ const breadcrumbMap = {
   "/bazhneter": "Բաժնետերերին",
   "/eshoppaymaner": "E-shop պայմաններ",
   "/arakum": "Առաքման պայմաններ",
+  "/vacharqi-kentronner": "Վաճառքի և սպասարկման կենտրոններ",
+  "/tackuyt": "Ծածկույթ",
+  "/bjjnayin-tsakuyt": "ջջային ցանցի ծածկույթ",
 };
 
 export default function Breadcrumb() {

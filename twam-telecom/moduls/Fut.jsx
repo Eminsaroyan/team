@@ -52,7 +52,7 @@ export default function () {
                     <Link to="/vacharqi-kentronner" className='text-[14px] text-[#c4c0c0] no-underline hover:underline'>
                         Վաճառքի և սպասարկման կենտրոններ
                     </Link>
-                    <Link to="/tsakuyt" className='text-[14px] text-[#c4c0c0] no-underline hover:underline'>
+                    <Link to="/tackuyt" className='text-[14px] text-[#c4c0c0] no-underline hover:underline'>
                         Ծածկույթ
                     </Link>
                     <Link to="/bjjnayin-tsakuyt" className='text-[14px] text-[#c4c0c0] no-underline hover:underline'>

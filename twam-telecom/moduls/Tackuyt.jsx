@@ -1,12 +1,12 @@
-import { Bjjmap } from "./Bjjnayin-tsakuytmap";
 import Breadcrumb from "./Breadcrumb";
 import Fut from "./Fut";
+import Tackuytmas from "./Tackuytmas";
 
-export default function Bjj() {
+export default function Tackuyt() {
     return (
         <>
             <Breadcrumb />
-            <Bjjmap />
+            <Tackuytmas />
             <Fut />
         </>
     )
