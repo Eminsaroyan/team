@@ -10,6 +10,7 @@ const breadcrumbMap = {
   "/zargacum": "Կայուն զարգացում",
   "/bazhneter": "Բաժնետերերին",
   "/eshoppaymaner": "E-shop պայմաններ",
+  "/arakum": "Առաքման պայմաններ",
 };
 
 export default function Breadcrumb() {
@@ -35,5 +36,5 @@ export default function Breadcrumb() {
     );
   }
 
-  return <div className="text-[14px] max-w-[1230px] m-auto mt-4 mb-6">{items}</div>;
+  return <div className="text-[14px] max-w-[1230px] m-auto mt-[20px] mb-6">{items}</div>;
 }
