@@ -15,6 +15,7 @@ const breadcrumbMap = {
   "/tackuyt": "Ծածկույթ",
   "/bjjnayin-tsakuyt": "ջջային ցանցի ծածկույթ",
   "/aparik": "Ապառիկ վաճառքի պայմաններ",
+  "/internet-tsakuyt": "Team ինտերնետի հասանելիության ծածկույթ",
 };
 
 export default function Breadcrumb() {

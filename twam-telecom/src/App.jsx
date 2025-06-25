@@ -33,6 +33,7 @@ import Arakum from "../moduls/Arakum";
 import Vacharqi from "../moduls/Vacharqi-kentronner";
 import Tackuyt from "../moduls/Tackuyt";
 import Bjj from "../moduls/Bjjnayin-tsakuyt";
+import Internet from "../moduls/Internet-tsakuyt";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -95,6 +96,7 @@ function App() {
         <Route path="/vacharqi-kentronner" element={<Vacharqi />} />
         <Route path="/tackuyt" element={<Tackuyt />} />
         <Route path="/bjjnayin-tsakuyt" element={<Bjj />} />
+        <Route path="/internet-tsakuyt" element={<Internet />} />
       </Routes>
     </>
   );
