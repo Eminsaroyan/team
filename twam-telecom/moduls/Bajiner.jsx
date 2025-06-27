@@ -1,19 +1,37 @@
+import { useState, useEffect } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "./firebase";
 import Maser from "./Maser";
 
-const data = [
-    { id: 1, name: "Բջջային կապ", image: "https://www.telecomarmenia.am/images/promo/1/16509682370213.png" },
-    { id: 2, name: "Ֆիքսված կապ", image: "https://www.telecomarmenia.am/images/promo/1/1650969068409.png" },
-    { id: 3, name: "Հավելվածնե", image: "https://www.telecomarmenia.am/images/promo/1/16509690498367.png" },
-    { id: 4, name: "Ինտերնետ և TV", image: "https://www.telecomarmenia.am/images/promo/1/16510462295535.png", }
-];
+export default function GlxavorList() {
+  const [glxavor, setGlxavor] = useState([]);
 
+  useEffect(() => {
+    async function fetchGlxavor() {
+      try {
+        const docRef = doc(db, "glxavor", "data");
+        const docSnap = await getDoc(docRef);
 
-export default function () {
-    return (
-        <div className="grid grid-cols-2 justify-items-center gap-4 mt-[30px] m-[90px] lg:grid-cols-2">
-            {data.map((el) => (
-                <Maser key={el.id} id={el.id} name={el.name} image={el.image} />
-            ))}
-        </div>
-    )
+        if (docSnap.exists()) {
+          const data = docSnap.data();
+          setGlxavor(data.items || []);
+        } else {
+          setGlxavor([]);
+        }
+      } catch (err) {
+        // Վերցնում ենք սխալը, բայց չենք ցույց տալիս
+        setGlxavor([]);
+      }
+    }
+
+    fetchGlxavor();
+  }, []);
+
+  return (
+    <div className="grid grid-cols-2 justify-items-center gap-4 mt-[30px] m-[90px] lg:grid-cols-2">
+      {glxavor.map(({ id, name, image }) => (
+        <Maser key={id} id={id} name={name} image={image} />
+      ))}
+    </div>
+  );
 }

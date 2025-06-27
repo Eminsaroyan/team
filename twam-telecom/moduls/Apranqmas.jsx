@@ -4,6 +4,7 @@ import { Heart } from 'lucide-react';
 export default function Apranqmas({ id, image, name, gin, aparic }) {
     const toggleProduct = useCartStore((state) => state.toggleProduct);
     const decreaseQuantity = useCartStore((state) => state.decreaseQuantity);
+    // Եթե isInCart ֆունկցիա է, որը պետք է կանչել id-ով, կարող ես անել այսպես
     const isInCart = useCartStore((state) => state.isInCart(id));
 
     const handleHeartClick = () => {
@@ -21,8 +22,9 @@ export default function Apranqmas({ id, image, name, gin, aparic }) {
             </button>
             <p className="w-[300px] text-[18px] mb-[10px]">{name}</p>
             <p className="text-[18px] mb-[10px]">{gin}</p>
-            <img src={image} alt={name} className="w-[100%] mb-[5px] h-[px] rounded-[12px]" />
+            <img src={image} alt={name} className="w-full mb-[5px] h-auto rounded-[12px]" />
             <p className="text-[18px] mb-[10px]">{aparic}</p>
         </div>
     );
 }
+

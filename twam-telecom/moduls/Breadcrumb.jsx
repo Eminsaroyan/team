@@ -24,6 +24,7 @@ const breadcrumbMap = {
   "/gordznker": "Գործընկերներ",
   "/paymaner": " Տեղեկատվություն > Ընդհանուր դրույթներ և պայմաններ",
   "/anvtangutyun": " Տեղեկատվություն > Անվտանգություն",
+  "/offers": "Ակցիաներ",
 };
 
 export default function Breadcrumb() {
