@@ -95,12 +95,12 @@ export default function Bajneter() {
 
                                         {item.links?.map((link, i) => (
                                             <p key={i}>
-                                                🔗{" "}
+                                                {" "}
                                                 <a
                                                     href={link.url}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
-                                                    className="underline text-blue-700 hover:text-blue-900 transition"
+                                                    className="underline text-blue-700 hover:no-underline transition"
                                                 >
                                                     {link.name}
                                                 </a>
