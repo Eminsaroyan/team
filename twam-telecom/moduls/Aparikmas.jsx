@@ -1,35 +1,28 @@
+import { useEffect, useState } from "react";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebase"; // ճշգրիտ ուղին firebase.js
+
 import { FaFacebookF, FaTwitter } from "react-icons/fa";
 
 export default function Aparikmas() {
-    const banks = [
-        {
-            name: "Ինեկոբանկ",
-            rate: "20.7% - 23.94%",
-            website: "https://www.inecobank.am",
-            contact: "(37410) 51-05-10",
-            note: "Ինեկոբանկը վերապահում է վերանայելու պայմանները"
-        },
-        {
-            name: "ՎՏԲ Հայաստան",
-            rate: "0% - 24%",
-            website: "https://www.vtb.am/am/credits/installments/installment-loan/",
-            contact: "(374 8000) 87-87, headoffice@vtb.am",
-            note: "ՎՏԲ-ն վերապահում է վերանայելու պայմանները"
-        },
-        {
-            name: "Ամերիաբանկ",
-            rate: "0% - 21.5%",
-            website: "https://ameriabank.am/",
-            contact: "(37410) 56-11-11",
-            note: "Ամերիաբանկը վերապահում է պայմանների փոփոխության իրավունք"
-        }
-    ];
+    const [banks, setBanks] = useState([]);
+
+    useEffect(() => {
+        const fetchBanks = async () => {
+            const querySnapshot = await getDocs(collection(db, "Bank"));
+            const bankData = querySnapshot.docs.map(doc => doc.data());
+            setBanks(bankData);
+        };
+        fetchBanks();
+    }, []);
+
     return (
         <div className="max-w-[1230px] m-auto">
-            <h1 className="mt-[30px]  mb-[30px] text-[45px] font-[600] font-team">Ապառիկ վաճառքի պայմաններ</h1>
+            <h1 className="mt-[30px] mb-[30px] text-[45px] font-[600] font-team">Ապառիկ վաճառքի պայմաններ</h1>
             <p className="w-[950px] leading-[1.5] mb-[30px] text-[#2c3843] text-[20px]">30,000 դրամ և ավելի գնով սմարթֆոնի ձեռքբերելու դեպքում ֆիզիկական անձանց համար ապառիկ վաճառքն իրականացվում է «ԱԿԲԱ ԲԱՆԿ», «ՅՈՒՆԻԲԱՆԿ», «ԻՆԵԿՈԲԱՆԿ» ինչպես նաև «ՎՏԲ-Հայաստան բանկ»(առցանց ապառիկ) -ի միջոցով:</p>
             <p className="text-[20px] mb-[30px]">Ստորև կարող եք ծանոթանալ ապառիկ վաճառքի պայմաններին:</p>
-            <table className="min-w-full bg-white mb-[30px] shadow-lg  border-collapse rounded-lg overflow-hidden">
+
+            <table className="min-w-full bg-white mb-[30px] shadow-lg border-collapse rounded-lg overflow-hidden">
                 <thead>
                     <tr className="bg-[#01415f] text-[#ffffff]">
                         <th className="px-[6px] py-[4px] text-left">Բանկ</th>
@@ -60,27 +53,22 @@ export default function Aparikmas() {
                     ))}
                 </tbody>
             </table>
+            <h4 className="mb-[16px] max-w-[1230px] border border-[#666e75] m-auto"></h4>
             <div className="mb-[50px] flex">
                 <p className="text-[19px] font-[600] font-semibold mr-[10px]">Կիսվել</p>
                 <div className="flex gap-[15px] items-center">
-                    <a
-                        href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.am"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#000000] hover:opacity-80 text-[25px]"
-                    >
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.am"
+                        target="_blank" rel="noopener noreferrer"
+                        className="text-[#000000] hover:opacity-80 text-[25px]">
                         <FaFacebookF />
                     </a>
-                    <a
-                        href="https://twitter.com/intent/tweet?url=https://yourwebsite.am&text=Կիսվեք այս էջով"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="ttext-[#000000] hover:opacity-80 text-[25px]"
-                    >
+                    <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.am&text=Կիսվեք այս էջով"
+                        target="_blank" rel="noopener noreferrer"
+                        className="text-[#000000] hover:opacity-80 text-[25px]">
                         <FaTwitter />
                     </a>
                 </div>
             </div>
         </div>
-    )
+    );
 }

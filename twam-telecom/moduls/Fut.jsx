@@ -61,7 +61,7 @@ export default function () {
                     <Link to="/internet-tsakuyt" className='text-[14px] text-[#c4c0c0] no-underline hover:underline'>
                         Team ինտերնետի հասանելիության ծածկույթ
                     </Link>
-                    <Link to="/ogtagorci-pastatuxter" className='text-[14px] text-[#c4c0c0] no-underline hover:underline'>
+                    <Link to="/ogtagorci-pastatuxte" className='text-[14px] text-[#c4c0c0] no-underline hover:underline'>
                         Օգտակար փաստաթղթեր
                     </Link>
                     <Link to="/gorcnqer-matakararner" className='text-[14px] text-[#c4c0c0] no-underline hover:underline'>

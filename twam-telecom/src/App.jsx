@@ -34,6 +34,12 @@ import Vacharqi from "../moduls/Vacharqi-kentronner";
 import Tackuyt from "../moduls/Tackuyt";
 import Bjj from "../moduls/Bjjnayin-tsakuyt";
 import Internet from "../moduls/Internet-tsakuyt";
+import Gaxtniutyun from "../moduls/Gaxtniutyun";
+import Marz from "../moduls/Marzeri-koder";
+import Gorcarqner from "../moduls/Gorcnqer-matakararner";
+import Vacharner from "../moduls/Vacharner";
+import Gordznker from "../moduls/Gordznker";
+import Pastatuxt from "../moduls/Ogtagorci-pastatuxte";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -97,6 +103,12 @@ function App() {
         <Route path="/tackuyt" element={<Tackuyt />} />
         <Route path="/bjjnayin-tsakuyt" element={<Bjj />} />
         <Route path="/internet-tsakuyt" element={<Internet />} />
+        <Route path="/gaxtniutyun" element={<Gaxtniutyun />} />
+        <Route path="/marzeri-koder" element={<Marz />} />
+        <Route path="/gorcnqer-matakararner" element={<Gorcarqner />} />
+        <Route path="/vacharner" element={<Vacharner />} />
+        <Route path="/gordznker" element={<Gordznker />} />
+        <Route path="/ogtagorci-pastatuxte" element={<Pastatuxt />} />
       </Routes>
     </>
   );
