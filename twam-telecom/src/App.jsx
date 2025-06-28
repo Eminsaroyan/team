@@ -10,7 +10,6 @@ import Smartphones from "../moduls/Smartphones";
 import Numbers from "../moduls/Numbers";
 import Equipment from "../moduls/Equipment";
 import Acs from "../moduls/Acs";
-import TopNumbers from "../moduls/Top-numbers";
 import Offers from "../moduls/Offers";
 import Teamtv from "../moduls/Teamtv";
 import Myteam from "../moduls/Myteam";
@@ -79,7 +78,6 @@ function App() {
         <Route path="/numbers" element={<Numbers />} />
         <Route path="/equipment" element={<Equipment />} />
         <Route path="/acs" element={<Acs />} />
-        <Route path="/top-numbers" element={<TopNumbers />} />
         <Route path="/offers" element={<Offers />} />
         <Route path="/teamtv" element={<Teamtv />} />
         <Route path="/myteam" element={<Myteam />} />

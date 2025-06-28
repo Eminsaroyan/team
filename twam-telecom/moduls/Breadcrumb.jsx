@@ -25,6 +25,7 @@ const breadcrumbMap = {
   "/paymaner": " Տեղեկատվություն > Ընդհանուր դրույթներ և պայմաններ",
   "/anvtangutyun": " Տեղեկատվություն > Անվտանգություն",
   "/offers": "Ակցիաներ",
+  "/numbers":"Համարներ",
 };
 
 export default function Breadcrumb() {

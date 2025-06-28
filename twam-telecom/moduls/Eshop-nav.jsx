@@ -14,7 +14,7 @@ export default function EshopNav() {
             <Link to="/numbers" className="cursor-pointer no-underline text-[#000000]">Համարներ</Link>
             <Link to="/equipment" className="cursor-pointer no-underline text-[#000000]">Սարքավորումներ</Link>
             <Link to="/acs" className="cursor-pointer no-underline text-[#000000]">Աքսեսուարներ</Link>
-            <Link to="/top-numbers" className="cursor-pointer no-underline text-[#000000]">Թոփ համարներ</Link>
+            <Link to="/numbers" className="cursor-pointer no-underline text-[#000000]">Թոփ համարներ</Link>
             <Link to="/offers" className="cursor-pointer no-underline text-[#000000]">Ակցիաներ</Link>
         </nav>
     );
