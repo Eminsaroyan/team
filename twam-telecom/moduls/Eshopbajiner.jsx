@@ -26,7 +26,7 @@ export default function EshopList() {
     }, []);
 
     return (
-        <div className=" grid grid-cols-2 justify-items-center gap-4 mt-[50px] m-[90px] lg:grid-cols-2">
+        <div className=" grid grid-cols-2 justify-items-center  gap-4 mt-[50px] m-[90px] lg:grid-cols-2">
             {eshop.map((el) => (
                 <Eshopbajin
                     key={el.id}

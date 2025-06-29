@@ -36,7 +36,7 @@ export default function Breadcrumb() {
 
   if (pathname !== "/") {
     items.push(
-      <Link key="/" to="/" className="text-[#000000] hover:no-underline">
+      <Link key="/" to="/" className="text-[#000000]  hover:no-underline">
         Գլխավոր
       </Link>
     );

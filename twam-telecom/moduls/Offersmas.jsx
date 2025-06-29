@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Offerstext from "./Offersdiv";
-import { db } from "./firebase"; // կոնֆիգ ֆայլից
+import { db } from "./firebase";
 import { doc, getDoc } from "firebase/firestore";
 
 export default function Offersmas() {

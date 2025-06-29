@@ -59,7 +59,7 @@ export default function EshopBajSlider() {
                             <img
                                 src={el.image}
                                 alt={el.vernagir || "Slide image"}
-                                className="ml-[450px] rounded-lg"
+                                className="ml-[450px] mt-[10px] rounded-lg"
                             />
                         )}
                     </SwiperSlide>
