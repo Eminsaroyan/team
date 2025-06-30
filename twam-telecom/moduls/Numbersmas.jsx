@@ -34,7 +34,6 @@ export default function Numbersmas() {
     return (
         <div>
             <h1 className="w-[100] mt-[20px] border-t  border-t-[#ebedef]"></h1>
-
             <div className="mt-[20px] max-w-[1230px]  mx-auto flex bg-white py-6">
                 <div className="mr-[12px]">
                     <div className="w-[288px] border-none">
