@@ -4,7 +4,7 @@ export default function Navbaj({ id, anun, nkar, gin, text, aparik, image }) {
     const toggleProduct = useCartStore(state => state.toggleProduct);
 
     return (
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  gap-x-8 gap-y-10 m-[20px]">
+        <div className="grid grid-cols-1 sm:grid-cols-2  lg:grid-cols-3  gap-x-8 gap-y-10 m-[20px]">
             <div className="w-full h-[480px] mb-12 pt-[26px] px-[15px] pb-[10px] rounded-[10px] border border bg-white shadow transition-all duration-300 hover:shadow-[0_4px_25px_rgba(0,0,0,0.2)] hover:-translate-y-[2px] flex flex-col justify-between group">
 
                 <p className="text-gray-800 font-semibold text-lg mb-[10px] text-center group-hover:text-[#f04d4d] transition-colors duration-300">

@@ -27,6 +27,7 @@ const breadcrumbMap = {
   "/offers": "Ակցիաներ",
   "/numbers": "Համարներ",
   "/smartphones": "Սմարթֆոններ",
+  "/equipment":"Սարքավորումներ",
 };
 
 export default function Breadcrumb() {
