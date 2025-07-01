@@ -39,6 +39,7 @@ import Gorcarqner from "../moduls/Gorcnqer-matakararner";
 import Vacharner from "../moduls/Vacharner";
 import Gordznker from "../moduls/Gordznker";
 import Pastatuxt from "../moduls/Ogtagorci-pastatuxte";
+import Etransport from "../moduls/E-transport";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -60,6 +61,7 @@ function App() {
     "/acs",
     "/top-numbers",
     "/offers",
+    "/e-transport"
   ];
 
   const shouldShowHeader = !hideHeaderOnPaths.includes(location.pathname);
@@ -107,6 +109,7 @@ function App() {
         <Route path="/vacharner" element={<Vacharner />} />
         <Route path="/gordznker" element={<Gordznker />} />
         <Route path="/ogtagorci-pastatuxte" element={<Pastatuxt />} />
+        <Route path="/e-transport" element={<Etransport />} />
       </Routes>
     </>
   );

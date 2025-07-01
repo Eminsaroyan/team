@@ -22,36 +22,49 @@ const breadcrumbMap = {
   "/gorcnqer-matakararner": "Գնումներ",
   "/vacharner": "Վաճառքներ",
   "/gordznker": "Գործընկերներ",
-  "/paymaner": " Տեղեկատվություն > Ընդհանուր դրույթներ և պայմաններ",
-  "/anvtangutyun": " Տեղեկատվություն > Անվտանգություն",
+  "/paymaner": "Տեղեկատվություն > Ընդհանուր դրույթներ և պայմաններ",
+  "/anvtangutyun": "Տեղեկատվություն > Անվտանգություն",
   "/offers": "Ակցիաներ",
   "/numbers": "Համարներ",
   "/smartphones": "Սմարթֆոններ",
-  "/equipment":"Սարքավորումներ",
+  "/equipment": "Սարքավորումներ",
+  "/e-transport": [
+    { to: "/", label: "Գլխավոր" },
+    { to: "/equipment", label: "Սարքավորումներ" },
+    { label: "Էլ․ տրանսպորտ" },
+  ],
 };
 
 export default function Breadcrumb() {
-  const location = useLocation();
-  const pathname = location.pathname;
+  const { pathname } = useLocation();
+  const mapValue = breadcrumbMap[pathname];
 
-  const items = [];
+  if (!mapValue) return null;
 
-  if (pathname !== "/") {
-    items.push(
-      <Link key="/" to="/" className="text-[#000000]  hover:no-underline">
-        Գլխավոր
-      </Link>
-    );
-  }
-
-  if (breadcrumbMap[pathname]) {
-    items.push(
-      <span key={pathname} className="text-black ml-1">
-        {" > "}
-        {breadcrumbMap[pathname]}
-      </span>
-    );
-  }
-
-  return <div className="text-[14px] max-w-[1230px] m-auto mt-[20px] mb-6">{items}</div>;
+  return (
+    <div className="text-[14px] max-w-[1230px] m-auto mt-[20px] mb-6">
+      {Array.isArray(mapValue) ? (
+        mapValue.map((crumb, idx) => (
+          <span key={idx} className="text-black">
+            {idx > 0 && " > "}
+            {crumb.to ? (
+              <Link to={crumb.to} className="text-[#000000] hover:underline">
+                {crumb.label}
+              </Link>
+            ) : (
+              <span>{crumb.label}</span>
+            )}
+          </span>
+        ))
+      ) : (
+        <>
+          <Link to="/" className="text-[#000000] hover:underline">
+            Գլխավոր
+          </Link>
+          <span className="text-black">{" > "}{mapValue}</span>
+        </>
+      )}
+    </div>
+  );
 }
+
