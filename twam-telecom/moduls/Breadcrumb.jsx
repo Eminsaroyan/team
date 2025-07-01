@@ -48,6 +48,11 @@ const breadcrumbMap = {
     { to: "/equipment", label: "Սարքավորումներ" },
     { label: "Նոթբուքեր և Պլանշետներ" },
   ],
+  "/smart-home": [
+    { to: "/", label: "Գլխավոր" },
+    { to: "/equipment", label: "Սարքավորումներ" },
+    { label: "Խելացի տուն" },
+  ],
 };
 
 export default function Breadcrumb() {

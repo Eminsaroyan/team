@@ -1,31 +1,35 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "./firebase";
 import Navbaj from "./Navbaj-apranqner";
-
-
-const Routers = [
-    {
-        id: 1,
-        anun: "Wi-Fi ուժեղացուցիչ սարք Nokia Beacon 24 ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17338289610877/245x280c-center.jpeg",
-        gin: "150,000 ֏",
-    },
-    {
-        id: 2,
-        anun: "Wi-Fi ուժեղացուցիչ սարք Nokia Beacon 2",
-        nkar: "https://www.telecomarmenia.am/images/product/6/1635339716551/245x280c-center.jpeg",
-        gin: "39,900 ֏",
-    },
-    {
-        id: 3,
-        anun: "Wi-Fi ուժեղացուցիչ սարք  Nokia Beacon 1.1 ",
-        nkar: "https://www.telecomarmenia.am/images/product/6/16353396768749/245x280c-center.jpeg",
-        gin: "29,900 ֏",
-    }
-]
 
 export default function Routersfiltr() {
     const [isOpen, setIsOpen] = useState(true);
     const [isBeautifulNumbersOpen, setIsBeautifulNumbersOpen] = useState(false);
+    const [routers, setRouters] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchRouters = async () => {
+            try {
+                const docRef = doc(db, "equipment", "routers");
+                const docSnap = await getDoc(docRef);
+
+                if (docSnap.exists()) {
+                    const data = docSnap.data();
+                    setRouters(data.items || []);
+                } else {
+                    console.log("📭 Փաստաթուղթը չի գտնվել");
+                }
+            } catch (error) {
+                console.error("❌ Սխալ տվյալներ ստանալիս:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchRouters();
+    }, []);
 
     return (
         <div>
@@ -124,18 +128,31 @@ export default function Routersfiltr() {
 
 
                     <div className="grid grid-cols-3 justify-center mb-[200px] gap-[20px]">
-                        {Routers.map((item) => (
-                            <Navbaj
-                                key={item.id}
-                                id={item.id}
-                                anun={item.anun}
-                                nkar={item.nkar}
-                                gin={item.gin}
-                                text={item.text}
-                                aparik={item.aparik}
-                                image={item.nkar}
-                            />
-                        ))}
+                        {loading ? (
+                            <p className="text-center col-span-3">Բեռնվում է...</p>
+                        ) : routers.length === 0 ? (
+                            <div className="col-span-3 text-center">
+                                <h2 className="text-center">Արդյունքներ չեն գտնվել</h2>
+                                <img
+                                    src="https://www.telecomarmenia.am/eshop/img/empty-page.png"
+                                    alt=""
+                                    className="w-[30%] mx-auto"
+                                />
+                            </div>
+                        ) : (
+                            routers.map((item) => (
+                                <Navbaj
+                                    key={item.id}
+                                    id={item.id}
+                                    anun={item.anun}
+                                    nkar={item.nkar}
+                                    gin={item.gin}
+                                    text={item.text}
+                                    aparik={item.aparik}
+                                    image={item.nkar}
+                                />
+                            ))
+                        )}
                     </div>
                 </div>
             </div>

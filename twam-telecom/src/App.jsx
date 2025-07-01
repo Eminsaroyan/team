@@ -43,6 +43,7 @@ import Etransport from "../moduls/E-transport";
 import Gamepads from "../moduls/Gamepads";
 import Routers from "../moduls/Routers";
 import Laptops from "../moduls/Laptops-tablets";
+import Smarthome from "../moduls/Smart-home";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -68,6 +69,7 @@ function App() {
     "/gamepads",
     "/routers",
     "/laptops-tablets",
+    "/smart-home"
   ];
 
   const shouldShowHeader = !hideHeaderOnPaths.includes(location.pathname);
@@ -119,6 +121,7 @@ function App() {
         <Route path="/gamepads" element={<Gamepads />} />
         <Route path="/routers" element={<Routers />} />
         <Route path="/laptops-tablets" element={<Laptops />} />
+        <Route path="/smart-home" element={<Smarthome />} />
       </Routes>
     </>
   );

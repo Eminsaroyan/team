@@ -1,38 +1,36 @@
 import { useState, useEffect } from "react";
 import Navbaj from "./Navbaj-apranqner";
-import { doc, getDoc } from "firebase/firestore";
 import { db } from "./firebase";
+import { doc, getDoc } from "firebase/firestore";
 
 
-export default function GamePadfiltr() {
+export default function Smarthomefil() {
     const [isOpen, setIsOpen] = useState(true);
     const [isBeautifulNumbersOpen, setIsBeautifulNumbersOpen] = useState(false);
-
-    const [gamepads, setGamepads] = useState([]);
+    const [smarthomeData, setSmarthomeData] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        async function fetchGamepads() {
+        async function fetchSmarthome() {
             setLoading(true);
             try {
-                const docRef = doc(db, "equipment", "gamepads");
+                const docRef = doc(db, "equipment", "smarthome");
                 const docSnap = await getDoc(docRef);
                 if (docSnap.exists()) {
                     const data = docSnap.data();
-                    setGamepads(data.items || []);
+                    setSmarthomeData(data.items || []);
                 } else {
-                    console.log("No such document!");
-                    setGamepads([]);
+                    console.warn("Smarthome document does not exist.");
                 }
-            } catch (error) {
-                console.error("Error fetching gamepads:", error);
+            } catch (err) {
+                console.error("Error fetching smarthome data:", err);
+            } finally {
+                setLoading(false);
             }
-            setLoading(false);
         }
-        fetchGamepads();
-    }, []);
 
-    if (loading) return <p>Բեռնվում է...</p>;
+        fetchSmarthome();
+    }, []);
 
     return (
         <div>
@@ -56,7 +54,7 @@ export default function GamePadfiltr() {
                                     {isOpen && (
                                         <div className="px-[20px] py-[20px]">
                                             <div className="space-y-[12px]">
-                                                {["1,000 ֏ - 50,000 ֏"].map((range, idx) => (
+                                                {["1,000 ֏ - 50,000 ֏", "50,000 ֏ - 100,000 ֏", "100,000 ֏ - 150,000 ֏", "200,000 ֏ - 250,000 ֏",].map((range, idx) => (
                                                     <label key={idx} className="block cursor-pointer text-[19px] mb-[22px] text-[#2c3843] hover:text-blue-600">
                                                         <input type="checkbox" name="price" className="mr-[8px] accent-blue-500" />
                                                         {range}
@@ -88,7 +86,7 @@ export default function GamePadfiltr() {
                                     </button>
                                     {isBeautifulNumbersOpen && (
                                         <div id="brandContent" className="bg-white px-[20px] py-[15px] rounded-[12px] mt-[10px]">
-                                            {["Canyon", "iPega"].map((opt, idx) => (
+                                            {["Aqara"].map((opt, idx) => (
                                                 <label key={idx} className="block cursor-pointer text-[19px] mb-[22px] text-[#2c3843] hover:text-blue-600">
                                                     <input type="checkbox" name="brand" value={opt} className="mr-[10px] accent-blue-500" />
                                                     {opt}
@@ -130,20 +128,24 @@ export default function GamePadfiltr() {
                     </div>
 
 
-                    <div className="grid grid-cols-3 justify-center mb-[200px] gap-[20px]">
-                        {gamepads.map((item) => (
-                            <Navbaj
-                                key={item.id}
-                                id={item.id}
-                                anun={item.anun}
-                                nkar={item.nkar}
-                                gin={item.gin}
-                                text={item.text}
-                                aparik={item.aparik}
-                                image={item.nkar}
-                            />
-                        ))}
-                    </div>
+                    {loading ? (
+                        <p className="text-center text-xl text-gray-600">Բեռնվում է...</p>
+                    ) : (
+                        <div className="grid grid-cols-3 justify-center mb-[200px] gap-[20px]">
+                            {smarthomeData.map((item) => (
+                                <Navbaj
+                                    key={item.id}
+                                    id={item.id}
+                                    anun={item.anun}
+                                    nkar={item.nkar}
+                                    gin={item.gin}
+                                    text={item.text}
+                                    aparik={item.aparik}
+                                    image={item.nkar}
+                                />
+                            ))}
+                        </div>
+                    )}
                 </div>
             </div>
         </div>
