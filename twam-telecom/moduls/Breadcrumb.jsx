@@ -33,6 +33,16 @@ const breadcrumbMap = {
     { to: "/equipment", label: "Սարքավորումներ" },
     { label: "Էլ․ տրանսպորտ" },
   ],
+  "/gamepads": [
+    { to: "/", label: "Գլխավոր" },
+    { to: "/equipment", label: "Սարքավորումներ" },
+    { label: "GamePad" },
+  ],
+  "/routers": [
+    { to: "/", label: "Գլխավոր" },
+    { to: "/equipment", label: "Սարքավորումներ" },
+    { label: " Ռոուտերներ" },
+  ],
 };
 
 export default function Breadcrumb() {

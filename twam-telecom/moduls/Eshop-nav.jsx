@@ -29,7 +29,7 @@ export default function EshopNav() {
                             Սարքավորումներ
                         </Link>
 
-                        <ul className="absolute top-full left-0 w-[200px] list-none mt-[2px] leading-[3] bg-[#f8f9f9] rounded-b-[12px] shadow-xl  z-50 hidden group-hover:block transition-all duration-300">
+                        <ul className="absolute top-full left-0 w-[200px] list-none leading-[3] bg-[#f8f9f9] rounded-b-[12px] shadow-xl  z-50 hidden group-hover:block transition-all duration-300">
                             {[
                                 { name: "Խելացի տուն", to: "/smart-home" },
                                 { name: "Նոթբուքեր և Պլանշետներ", to: "/laptops-tablets" },

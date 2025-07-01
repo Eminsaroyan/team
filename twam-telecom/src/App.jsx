@@ -40,6 +40,8 @@ import Vacharner from "../moduls/Vacharner";
 import Gordznker from "../moduls/Gordznker";
 import Pastatuxt from "../moduls/Ogtagorci-pastatuxte";
 import Etransport from "../moduls/E-transport";
+import Gamepads from "../moduls/Gamepads";
+import Routers from "../moduls/Routers";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -61,7 +63,9 @@ function App() {
     "/acs",
     "/top-numbers",
     "/offers",
-    "/e-transport"
+    "/e-transport",
+    "/gamepads",
+    "/routers"
   ];
 
   const shouldShowHeader = !hideHeaderOnPaths.includes(location.pathname);
@@ -110,6 +114,8 @@ function App() {
         <Route path="/gordznker" element={<Gordznker />} />
         <Route path="/ogtagorci-pastatuxte" element={<Pastatuxt />} />
         <Route path="/e-transport" element={<Etransport />} />
+        <Route path="/gamepads" element={<Gamepads />} />
+        <Route path="/routers" element={<Routers />} />
       </Routes>
     </>
   );
