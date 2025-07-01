@@ -1,11 +1,9 @@
 import { useState, useEffect } from "react";
 import Navbaj from "./Navbaj-apranqner";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "./firebase"; 
+import { db } from "./firebase";
 
-
-
-export default function Equipmentfiltr() {
+export default function Laptopsfil() {
     const [isOpen, setIsOpen] = useState(true);
     const [isBeautifulNumbersOpen, setIsBeautifulNumbersOpen] = useState(true);
     const [isRamOpen, setIsRamOpen] = useState(true);
@@ -18,30 +16,30 @@ export default function Equipmentfiltr() {
     const [ishisdzevOpen, sethishdzevopen] = useState(false)
 
 
-    const [equipmentData, setEquipmentData] = useState([]);
+    const [laptops, setLaptops] = useState([]);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        async function fetchData() {
+        const fetchLaptops = async () => {
             try {
-                const docRef = doc(db, "equipment", "data");
+                const docRef = doc(db, "equipment", "laptops");
                 const docSnap = await getDoc(docRef);
 
                 if (docSnap.exists()) {
-                    setEquipmentData(docSnap.data().items);
+                    const data = docSnap.data();
+                    setLaptops(data.items || []);
                 } else {
-                    console.log("No such document!");
+                    console.log("📭 Փաստաթուղթը գոյություն չունի");
                 }
             } catch (error) {
-                console.error("Error fetching equipment:", error);
+                console.error("🔥 Սխալ տվյալ ստանալիս:", error);
             } finally {
                 setLoading(false);
             }
-        }
+        };
 
-        fetchData();
+        fetchLaptops();
     }, []);
-
 
     return (
         <div>
@@ -97,7 +95,7 @@ export default function Equipmentfiltr() {
                                     </button>
                                     {isBeautifulNumbersOpen && (
                                         <div id="brandContent" className="bg-white px-[20px] py-[15px] rounded-[12px] mt-[10px]">
-                                            {["Nokia", "Apple", "Canyon", "iPega", "Panasonic"].map((opt, idx) => (
+                                            {["Apple", "ASUS", "Dell", "Oscal"].map((opt, idx) => (
                                                 <label key={idx} className="block cursor-pointer text-[19px] mb-[22px] text-[#2c3843] hover:text-blue-600">
                                                     <input type="checkbox" name="brand" value={opt} className="mr-[10px] accent-blue-500" />
                                                     {opt}
@@ -373,12 +371,20 @@ export default function Equipmentfiltr() {
                             </select>
                         </div>
                     </div>
-
-                    {loading ? (
-                        <p className="text-center text-xl my-10">Տվյալները բեռնվում են...</p>
-                    ) : (
-                        <div className="grid grid-cols-3 justify-center mb-[200px] gap-[20px]">
-                            {equipmentData.map((item) => (
+                    <div className="grid grid-cols-3 justify-center mb-[200px] gap-[20px]">
+                        {loading ? (
+                            <p>Բեռնվում է...</p>
+                        ) : laptops.length === 0 ? (
+                            <div className="col-span-3 text-center">
+                                <h2 className="text-center">Արդյունքներ չեն գտնվել</h2>
+                                <img
+                                    src="https://www.telecomarmenia.am/eshop/img/empty-page.png"
+                                    alt=""
+                                    className="w-[30%] mx-auto"
+                                />
+                            </div>
+                        ) : (
+                            laptops.map((item) => (
                                 <Navbaj
                                     key={item.id}
                                     id={item.id}
@@ -389,9 +395,9 @@ export default function Equipmentfiltr() {
                                     aparik={item.aparik}
                                     image={item.nkar}
                                 />
-                            ))}
-                        </div>
-                    )}
+                            ))
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

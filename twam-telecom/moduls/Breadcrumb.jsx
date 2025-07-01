@@ -43,6 +43,11 @@ const breadcrumbMap = {
     { to: "/equipment", label: "Սարքավորումներ" },
     { label: " Ռոուտերներ" },
   ],
+  "/laptops-tablets": [
+    { to: "/", label: "Գլխավոր" },
+    { to: "/equipment", label: "Սարքավորումներ" },
+    { label: "Նոթբուքեր և Պլանշետներ" },
+  ],
 };
 
 export default function Breadcrumb() {

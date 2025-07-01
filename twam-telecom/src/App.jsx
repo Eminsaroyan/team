@@ -42,6 +42,7 @@ import Pastatuxt from "../moduls/Ogtagorci-pastatuxte";
 import Etransport from "../moduls/E-transport";
 import Gamepads from "../moduls/Gamepads";
 import Routers from "../moduls/Routers";
+import Laptops from "../moduls/Laptops-tablets";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -65,7 +66,8 @@ function App() {
     "/offers",
     "/e-transport",
     "/gamepads",
-    "/routers"
+    "/routers",
+    "/laptops-tablets",
   ];
 
   const shouldShowHeader = !hideHeaderOnPaths.includes(location.pathname);
@@ -116,6 +118,7 @@ function App() {
         <Route path="/e-transport" element={<Etransport />} />
         <Route path="/gamepads" element={<Gamepads />} />
         <Route path="/routers" element={<Routers />} />
+        <Route path="/laptops-tablets" element={<Laptops />} />
       </Routes>
     </>
   );
