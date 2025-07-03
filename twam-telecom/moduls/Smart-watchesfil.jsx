@@ -1,42 +1,37 @@
 import { useState, useEffect } from "react";
 import Navbaj from "./Navbaj-apranqner";
-
-const watch = [
-    {
-        id: 1,
-        anun: "Apple Watch Series 10 GPS 42mm Rose Gold Aluminium Case with Light Blush Sport Band - S/M ",
-        nkar: "https://www.telecomarmenia.am/images/product/8/17268305098487/245x280c-center.jpeg",
-        gin: "259,900 ֏"
-    },
-    {
-        id: 2,
-        anun: "Apple Watch SE GPS 40mm ",
-        nkar: "https://www.telecomarmenia.am/images/product/7/16977140220957/245x280c-center.jpeg",
-        gin: "139,900 ֏"
-    },
-    {
-        id: 3,
-        anun: "Elari Kidphone 2 ",
-        nkar: "https://www.telecomarmenia.am/images/product/6/16846701947605/245x280c-center.jpeg",
-        gin: "13,900 ֏"
-    },
-    {
-        id: 4,
-        anun: "Canyon SW79 ",
-        nkar: "https://www.telecomarmenia.am/images/product/6/16845153201007/245x280c-center.png",
-        gin: "14,200 ֏"
-    },
-    {
-        id: 5,
-        anun: "Canyon SW74 ",
-        nkar: "https://www.telecomarmenia.am/images/product/6/16845151683728/245x280c-center.png",
-        gin: "12,500 ֏"
-    },
-]
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebase";
 
 export default function Smartwatchfil() {
     const [isOpen, setIsOpen] = useState(true);
     const [isBeautifulNumbersOpen, setIsBeautifulNumbersOpen] = useState(true);
+    const [watch, setWatch] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const snapshot = await getDocs(collection(db, "watch"));
+                const data = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
+                setWatch(data);
+            } catch (err) {
+                console.error("⚠️ Error loading watch data from Firebase:", err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (loading) {
+        return <div className="text-center py-20">Բեռնվում է...</div>;
+    }
 
 
     return (
@@ -93,7 +88,7 @@ export default function Smartwatchfil() {
                                     </button>
                                     {isBeautifulNumbersOpen && (
                                         <div id="brandContent" className="bg-white px-[20px] py-[15px] rounded-[12px] mt-[10px]">
-                                            {["Canyon","Elari","Apple"].map((opt, idx) => (
+                                            {["Canyon", "Elari", "Apple"].map((opt, idx) => (
                                                 <label key={idx} className="block cursor-pointer text-[19px] mb-[22px] text-[#2c3843] hover:text-blue-600">
                                                     <input type="checkbox" name="brand" value={opt} className="mr-[10px] accent-blue-500" />
                                                     {opt}

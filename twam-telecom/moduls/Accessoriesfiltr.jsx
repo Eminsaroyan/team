@@ -1,122 +1,8 @@
 import { useState, useEffect } from "react";
 import Navbaj from "./Navbaj-apranqner";
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebase";
 
-const acs = [
-    {
-        id: 1,
-        anun: "Բարձրախոս JBL FLIP 6 ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17477418264523/245x280c-center.png",
-        gin: "59,900 ֏"
-    },
-    {
-        id: 2,
-        anun: "Անլար ականջակալ Marshall Major V ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17472063669139/245x280c-center.png",
-        gin: "64,900 ֏"
-    },
-    {
-        id: 3,
-        anun: "Պատյան Apple iPhone 16 Pro Max 3mk Frosty MagCase ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17355558012237/245x280c-center.png",
-        gin: "6,000 ֏"
-    },
-    {
-        id: 4,
-        anun: "Պատյան Apple iPhone 16 Pro Max 3mk Frosty MagCase ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17355550026716/245x280c-center.png",
-        gin: "6,000 ֏"
-    },
-    {
-        id: 5,
-        anun: "Պատյան Apple iPhone 16 Pro 3mk Frosty MagCase ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17355547503823/245x280c-center.png",
-        gin: "6,000 ֏"
-    },
-    {
-        id: 6,
-        anun: "Պատյան Apple iPhone 16 Pro 3mk Frosty MagCase ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17355545051807/245x280c-center.png",
-        gin: "6,000 ֏"
-    },
-    {
-        id: 7,
-        anun: "Apple Watch Series 10 GPS 42mm Rose Gold Aluminium Case with Light Blush Sport Band - S/M ",
-        nkar: "https://www.telecomarmenia.am/images/product/8/17268305098487/245x280c-center.jpeg",
-        gin: "259,900 ֏"
-    },
-    {
-        id: 8,
-        anun: "Apple Watch SE GPS 40mm ",
-        nkar: "https://www.telecomarmenia.am/images/product/7/16977140220957/245x280c-center.jpeg",
-        gin: "139,900 ֏"
-    },
-    {
-        id: 9,
-        anun: "Elari Kidphone 2 ",
-        nkar: "https://www.telecomarmenia.am/images/product/6/16846701947605/245x280c-center.jpeg",
-        gin: "13,900 ֏"
-    },
-    {
-        id: 10,
-        anun: "Netac U278 USB 3.0 128GB | 128 GB",
-        nkar: "https://www.telecomarmenia.am/images/product/6/1679480528996/245x280c-center.jpeg",
-        gin: "8,000 ֏"
-    },
-    {
-        id: 11,
-        anun: "Արտաքին մարտկոց 3mk MagSynergy 5000mAh ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17352122121883/245x280c-center.jpeg",
-        gin: "22,000 ֏"
-    },
-    {
-        id: 12,
-        anun: "Արտաքին մարտկոց 3mk Hardy MagSynergy Ni+10.000mAh ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17352119721237/245x280c-center.jpeg",
-        gin: "25,000 ֏"
-    },
-    {
-        id: 13,
-        anun: "Հենակ մեքենայի 3mk Car MagChargerfor Airvent ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17351990521334/245x280c-center.jpeg",
-        gin: "8,000 ֏"
-    },
-    {
-        id: 14,
-        anun: "Մալուխ 3mk Hyper Thunderbolt Cable 240W ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17351979130219/245x280c-center.jpeg",
-        gin: "14,000 ֏"
-    },
-    {
-        id: 15,
-        anun: "Մալուխ 3mk Hyper Silicone Cable-C to Type-C 60W 3A ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/1735196481803/245x280c-center.jpeg",
-        gin: "4,500 ֏"
-    },
-    {
-        id: 16,
-        anun: "Մալուխ 3mk Hyper Silicone Cable-C to C 2m 100W ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/1734615645648/245x280c-center.jpeg",
-        gin: "4,500 ֏"
-    },
-    {
-        id: 17,
-        anun: "Մալուխ 3mk Hyper Cable C to Lightning 20W 1.2m ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17346105791091/245x280c-center.jpeg",
-        gin: "3,000 ֏"
-    },
-    {
-        id: 18,
-        anun: "Մալուխ 3mk Hyper Cable C to Lightning 20W 1.2m ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/1734610370712/245x280c-center.jpeg",
-        gin: "3,000 ֏"
-    },
-    {
-        id: 19,
-        anun: "Մալուխ 3mk Hyper Cable C to C 100W 1.2m ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17345959116677/245x280c-center.jpeg",
-        gin: "4,000 ֏"
-    },
-]
 
 export default function Accessoriesfiltr() {
     const [isOpen, setIsOpen] = useState(true);
@@ -125,6 +11,33 @@ export default function Accessoriesfiltr() {
     const [isguyn, setGuynOpen] = useState(true);
     const [islicqsOpen, setlicqOpen] = useState(true);
     const [istesak, setTesakOpen] = useState(true);
+
+    const [acs, setAcs] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const snapshot = await getDocs(collection(db, "acs"));
+                const items = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
+                setAcs(items);
+            } catch (error) {
+                console.error("❌ Սխալ է տեղի ունեցել Firebase-ից բեռնելիս:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    // Եթե դեռ բեռնում է
+    if (loading) {
+        return <div className="text-center text-xl py-20">Բեռնվում է...</div>;
+    }
 
 
     return (

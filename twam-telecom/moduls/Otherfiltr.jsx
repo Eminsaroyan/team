@@ -1,80 +1,7 @@
 import { useState, useEffect } from "react";
 import Navbaj from "./Navbaj-apranqner";
-
-const myus = [
-    {
-        id: 1,
-        anun: "Պատյան Apple iPhone 16 Pro Max 3mk Frosty MagCase ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17355558012237/245x280c-center.png",
-        gin: "6,000 ֏"
-    },
-    {
-        id: 2,
-        anun: "Պատյան Apple iPhone 16 Pro Max 3mk Frosty MagCase ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17355550026716/245x280c-center.png",
-        gin: "6,000 ֏"
-    },
-    {
-        id: 3,
-        anun: "Պատյան Apple iPhone 16 Pro 3mk Frosty MagCase ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17355547503823/245x280c-center.png",
-        gin: "6,000 ֏"
-    },
-    {
-        id: 4,
-        anun: "Պատյան Apple iPhone 16 Pro 3mk Frosty MagCase ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17355545051807/245x280c-center.png",
-        gin: "6,000 ֏"
-    },
-    {
-        id: 5,
-        anun: "Պատյան Apple iPhone 16 Plus 3mk Frosty MagCase ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17355541595953/245x280c-center.jpeg",
-        gin: "6,000 ֏"
-    },
-    {
-        id: 6,
-        anun: "Պատյան Apple iPhone 16 Plus  3mk Frosty MagCase ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17353033655185/245x280c-center.jpeg",
-        gin: "6,000 ֏"
-    },
-    {
-        id: 7,
-        anun: "Պատյան Apple iPhone 16 3mk Frosty MagCase ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17353029741921/245x280c-center.png",
-        gin: "6,000 ֏"
-    },
-    {
-        id: 8,
-        anun: "Պատյան Apple iPhone 15 - 3mk Frosty MagCase ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17353026691965/245x280c-center.png",
-        gin: "6,000 ֏"
-    },
-    {
-        id: 9,
-        anun: "Պատյան Apple iPhone 15  3mk Frosty MagCase ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17353023033556/245x280c-center.png",
-        gin: "6,000 ֏"
-    },
-    {
-        id: 10,
-        anun: "Պատյան Apple iPhone 16  3mk Frosty MagCase ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17353029741921/245x280c-center.png",
-        gin: "6,000 ֏"
-    },
-    {
-        id: 11,
-        anun: "Պատյան Apple iPhone 16 3mk Smoke Mag&Stand ",
-        nkar: "https://www.telecomarmenia.am/images/product/8/17321944509297/245x280c-center.jpeg",
-        gin: "10,000 ֏"
-    },
-    {
-        id: 12,
-        anun: "Պատյան Apple iPhone 16 Pro 3mk Satin Armor ",
-        nkar: "https://www.telecomarmenia.am/images/product/8/17321916562212/245x280c-center.jpeg",
-        gin: "5,000 ֏"
-    }
-]
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebase";
 
 export default function Otherfiltr() {
     const [isOpen, setIsOpen] = useState(true);
@@ -82,7 +9,31 @@ export default function Otherfiltr() {
     const [istesak, setTesakOpen] = useState(true)
     const [islicqsOpen, setlicqOpen] = useState(true)
     const [isusbOpen, setusb] = useState(true)
+    const [myus, setMyus] = useState([]);
+    const [loading, setLoading] = useState(true);
 
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const snapshot = await getDocs(collection(db, "myus"));
+                const data = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
+                setMyus(data);
+            } catch (err) {
+                console.error("⚠️ Սխալ myus տվյալները բեռնելիս:", err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (loading) {
+        return <div className="text-center py-20">Բեռնվում է...</div>;
+    }
 
     return (
         <div>
@@ -148,15 +99,15 @@ export default function Otherfiltr() {
                                         </div>
                                     )}
                                 </div>
-                                
 
-                                 <div className="pt-[18px] border border-[#ebedef] bg-[#f8f9f9] max-w-[320px] w-full">
+
+                                <div className="pt-[18px] border border-[#ebedef] bg-[#f8f9f9] max-w-[320px] w-full">
                                     <button onClick={() => setusb(!isusbOpen)} className="w-full text-start py-[10px] pr-[30px] pl-[10px] text-[18px] font-semibold tracking-[1px] border-none bg-[#ffffff]" aria-expanded={isusbOpen} aria-controls="brandContent">
-                                       USB բնիկների քանակը
+                                        USB բնիկների քանակը
                                     </button>
                                     {isusbOpen && (
                                         <div id="brandContent" className="bg-white px-[20px] py-[15px] rounded-[12px] mt-[10px]">
-                                            {[2 ].map((opt, idx) => (
+                                            {[2].map((opt, idx) => (
                                                 <label key={idx} className="block cursor-pointer text-[19px] mb-[22px] text-[#2c3843] hover:text-blue-600">
                                                     <input type="checkbox" name="brand" value={opt} className="mr-[10px] accent-blue-500" />
                                                     {opt}

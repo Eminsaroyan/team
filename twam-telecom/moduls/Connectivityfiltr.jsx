@@ -1,85 +1,37 @@
 import { useState, useEffect } from "react";
 import Navbaj from "./Navbaj-apranqner";
-
-const miacum = [
-    {
-        id: 1,
-        anun: "Արտաքին մարտկոց 3mk MagSynergy 5000mAh ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17352122121883/245x280c-center.jpeg",
-        gin: "22,000 ֏"
-    },
-    {
-        id: 2,
-        anun: "Արտաքին մարտկոց 3mk Hardy MagSynergy Ni+10.000mAh ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17352119721237/245x280c-center.jpeg",
-        gin: "25,000 ֏"
-    },
-    {
-        id: 3,
-        anun: "Հենակ մեքենայի 3mk Car MagChargerfor Airvent ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17351990521334/245x280c-center.jpeg",
-        gin: "8,000 ֏"
-    },
-    {
-        id: 4,
-        anun: "Մալուխ 3mk Hyper Thunderbolt Cable 240W ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17351979130219/245x280c-center.jpeg",
-        gin: "14,000 ֏"
-    },
-    {
-        id: 5,
-        anun: "Մալուխ 3mk Hyper Silicone Cable-C to Type-C 60W 3A ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/1735196481803/245x280c-center.jpeg",
-        gin: "4,500 ֏"
-    },
-    {
-        id: 6,
-        anun: "Մալուխ 3mk Hyper Silicone Cable-C to C 2m 100W ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/1734615645648/245x280c-center.jpeg",
-        gin: "4,500 ֏"
-    },
-    {
-        id: 7,
-        anun: "Մալուխ 3mk Hyper Cable C to Lightning 20W 1.2m ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17346105791091/245x280c-center.jpeg",
-        gin: "3,000 ֏"
-    },
-    {
-        id: 8,
-        anun: "Մալուխ 3mk Hyper Cable C to Lightning 20W 1.2m ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/1734610370712/245x280c-center.jpeg",
-        gin: "3,000 ֏"
-    },
-    {
-        id: 9,
-        anun: "Մալուխ 3mk Hyper Cable C to C 100W 1.2m ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17345959116677/245x280c-center.jpeg",
-        gin: "4,000 ֏"
-    },
-    {
-        id: 10,
-        anun: "Լիցքավորման սարք 3MK Hyper Gan Charger 33W ",
-        nkar: "https://www.telecomarmenia.am/images/product/9/17345237634333/245x280c-center.jpeg",
-        gin: "5,700 ֏"
-    },
-    {
-        id: 11,
-        anun: "Լիցքավորման սարք 20W 1C+1A Fast Charger + 20W C to L cable 1.2m ",
-        nkar: "https://www.telecomarmenia.am/images/product/8/17291630122902/245x280c-center.png",
-        gin: "3,500 ֏"
-    },
-    {
-        id: 12,
-        anun: "Ակուստիկ համակարգ  Marshall Uxbridge Google ",
-        nkar: "https://www.telecomarmenia.am/images/product/8/17291611806127/245x280c-center.jpeg",
-        gin: "5,200 ֏"
-    }
-]
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebase";
 
 export default function Connectivityfiltr() {
     const [isOpen, setIsOpen] = useState(true);
     const [isBeautifulNumbersOpen, setIsBeautifulNumbersOpen] = useState(true);
     const [istesak, setTesakOpen] = useState(true)
+    const [miacum, setMiacum] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const snapshot = await getDocs(collection(db, "miacum"));
+                const items = snapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
+                setMiacum(items);
+            } catch (error) {
+                console.error("❌ Սխալ Firebase-ից բեռնելիս:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (loading) {
+        return <div className="text-center text-xl py-20">Բեռնվում է...</div>;
+    }
 
 
     return (

@@ -1,19 +1,37 @@
 import { useState, useEffect } from "react";
 import Navbaj from "./Navbaj-apranqner";
-
-const stooge = [
-    {
-        id: 1,
-        anun: "Netac U278 USB 3.0 128GB | 128 GB",
-        nkar: "https://www.telecomarmenia.am/images/product/6/1679480528996/245x280c-center.jpeg",
-        gin: "8,000 ֏"
-    }
-]
+import { collection, getDocs } from "firebase/firestore";
+import { db } from "./firebase";
 
 export default function Storagefil() {
     const [isOpen, setIsOpen] = useState(true);
     const [isBeautifulNumbersOpen, setIsBeautifulNumbersOpen] = useState(true);
     const [isnerqhish, setInerqhishOpen] = useState(true)
+    const [stooge, setStooge] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const querySnapshot = await getDocs(collection(db, "stooge"));
+                const data = querySnapshot.docs.map((doc) => ({
+                    id: doc.id,
+                    ...doc.data(),
+                }));
+                setStooge(data);
+            } catch (error) {
+                console.error("🔥 Սխալ տվյալների բերման ժամանակ:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    if (loading) {
+        return <div className="text-center text-xl py-20">Բեռնվում է...</div>;
+    }
 
 
     return (
