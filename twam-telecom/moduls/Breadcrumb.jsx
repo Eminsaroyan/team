@@ -53,6 +53,32 @@ const breadcrumbMap = {
     { to: "/equipment", label: "Սարքավորումներ" },
     { label: "Խելացի տուն" },
   ],
+  "/accessories": "Աքսեսուարներ",
+  "/smart-watches": [
+    { to: "/", label: "Գլխավոր" },
+    { to: "/accessories", label: "Աքսեսուարներ" },
+    { label: "Սմարթ ժամացույցներ" },
+  ],
+  "/audio": [
+    { to: "/", label: "Գլխավոր" },
+    { to: "/accessories", label: "Աքսեսուարներ" },
+    { label: "Աուդիո" },
+  ],
+  "/storage": [
+    { to: "/", label: "Գլխավոր" },
+    { to: "/accessories", label: "Աքսեսուարներ" },
+    { label: "Կրիչներ" },
+  ],
+  "/connectivity": [
+    { to: "/", label: "Գլխավոր" },
+    { to: "/accessories", label: "Աքսեսուարներ" },
+    { label: "Միացումներ" },
+  ],
+  "/other": [
+    { to: "/", label: "Գլխավոր" },
+    { to: "/accessories", label: "Աքսեսուարներ" },
+    { label: "Այլ" },
+  ],
 };
 
 export default function Breadcrumb() {

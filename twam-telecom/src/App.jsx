@@ -9,7 +9,6 @@ import Eshop from "../moduls/Eshop";
 import Smartphones from "../moduls/Smartphones";
 import Numbers from "../moduls/Numbers";
 import Equipment from "../moduls/Equipment";
-import Acs from "../moduls/Acs";
 import Offers from "../moduls/Offers";
 import Teamtv from "../moduls/Teamtv";
 import Myteam from "../moduls/Myteam";
@@ -44,6 +43,12 @@ import Gamepads from "../moduls/Gamepads";
 import Routers from "../moduls/Routers";
 import Laptops from "../moduls/Laptops-tablets";
 import Smarthome from "../moduls/Smart-home";
+import Accessories from "../moduls/Accessories";
+import Smartwatch from "../moduls/Smart-watches";
+import Audio from "../moduls/Audio";
+import Storage from "../moduls/Sorage";
+import Conect from "../moduls/Connectivity";
+import Otter from "../moduls/Other";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -69,7 +74,13 @@ function App() {
     "/gamepads",
     "/routers",
     "/laptops-tablets",
-    "/smart-home"
+    "/smart-home",
+    "/accessories",
+    "/smart-watches",
+    "/other",
+    "/connectivity",
+    "/storage",
+    "/audio"
   ];
 
   const shouldShowHeader = !hideHeaderOnPaths.includes(location.pathname);
@@ -87,7 +98,6 @@ function App() {
         <Route path="/smartphones" element={<Smartphones />} />
         <Route path="/numbers" element={<Numbers />} />
         <Route path="/equipment" element={<Equipment />} />
-        <Route path="/acs" element={<Acs />} />
         <Route path="/offers" element={<Offers />} />
         <Route path="/teamtv" element={<Teamtv />} />
         <Route path="/myteam" element={<Myteam />} />
@@ -122,6 +132,12 @@ function App() {
         <Route path="/routers" element={<Routers />} />
         <Route path="/laptops-tablets" element={<Laptops />} />
         <Route path="/smart-home" element={<Smarthome />} />
+        <Route path="/accessories" element={<Accessories />} />
+        <Route path="/smart-watches" element={<Smartwatch />} />
+        <Route path="/audio" element={<Audio />} />
+        <Route path="/storage" element={<Storage />} />
+        <Route path="/connectivity" element={<Conect />} />
+        <Route path="/other" element={<Otter />} />
       </Routes>
     </>
   );
