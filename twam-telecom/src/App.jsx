@@ -49,6 +49,8 @@ import Audio from "../moduls/Audio";
 import Storage from "../moduls/Sorage";
 import Conect from "../moduls/Connectivity";
 import Otter from "../moduls/Other";
+import TeamgTv from "../moduls/team-tv";
+import Mobile from "../moduls/Mobile";
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -80,7 +82,8 @@ function App() {
     "/other",
     "/connectivity",
     "/storage",
-    "/audio"
+    "/audio",
+    "/business"
   ];
 
   const shouldShowHeader = !hideHeaderOnPaths.includes(location.pathname);
@@ -138,6 +141,8 @@ function App() {
         <Route path="/storage" element={<Storage />} />
         <Route path="/connectivity" element={<Conect />} />
         <Route path="/other" element={<Otter />} />
+        <Route path="/team-tv" element={<TeamgTv />} />
+        <Route path="/mobile" element={<Mobile />} />
       </Routes>
     </>
   );

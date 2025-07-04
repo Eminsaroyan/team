@@ -1,24 +1,197 @@
 import Hederone from "./Hederone";
+import { Link } from "react-router-dom";
 
-export default function () {
+export default function NavbarWithHeader() {
   return (
     <div>
       <Hederone />
-      <nav className="flex items-center max-w-[1400px] pl-[160px] pr-[100px] pb-[5px] pt-[10px] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)] relative bg-white z-50">
+      <nav className="flex items-center max-w-[1400px] mx-auto pl-[200px] pr-[130px] pb-[5px] pt-[10px] shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3)] relative bg-white z-50">
         <img
           src="https://www.telecomarmenia.am/img/logo.svg?v=1"
           alt="Logo"
           className="cursor-pointer"
         />
-        <ul className='list-none flex'>
 
-          <li className="px-[36px] py-0 text-[#000000]">Սակագներ</li>
-          <li className="px-[36px] py-0 text-[#000000]">Ինտերնետ</li>
-          <li className="px-[36px] py-0 text-[#000000]">Ծառայություններ</li>
-          <li className="px-[36px] py-0 text-[#000000]">Ռոումինգ</li>
-          <li className="px-[30px] py-0 text-[#000000]">Առցանց խանութ</li>
-          <li className="px-[36px] py-0 text-[#000000]">Առաջարկներ</li>
-          <li className="px-[36px] py-0 text-[#000000]">Օգնություն</li>
+        <ul className="list-none flex ml-[30px] gap-x-[48px] items-center">
+
+          {/* Dropdown: Սակագներ */}
+          <li className="relative group">
+            <p className="cursor-pointer text-[#2c3843] font-medium text-[16px] px-[12px] py-[8px] transition-colors duration-200 hover:text-blue-600">
+              Սակագներ
+            </p>
+            <ul className="absolute top-full list-none left-0 w-[250px] bg-[#f8f9f9] rounded-b-[12px] shadow-xl z-50 hidden group-hover:block transition-all duration-300">
+              {[
+                { name: "Բջջային կապ", to: "/mobile" },
+                { name: "Ինտերնետ և TV - ԿՈՍՄՈ", to: "/cosmo" },
+                { name: "Ինտերնետ և TV - ԿՈՄԲՈ", to: "/combo" },
+                { name: "Ֆիքսված հեռախոսակապ", to: "/fixed-phone" },
+              ].map(({ name, to }, idx) => (
+                <li
+                  key={idx}
+                  className="border-b border-[#ebedef] last:border-none transition-colors duration-200"
+                >
+                  <Link
+                    to={to}
+                    className="block w-full px-[20px] py-[10px] text-[16px] text-[#2c3843] hover:text-blue-600 no-underline"
+                  >
+                    {name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li className="relative group">
+            <p className="cursor-pointer text-[#2c3843] font-medium text-[16px]  transition-colors duration-200 hover:text-blue-600">
+              Ինտերնետ
+            </p>
+            <ul className="absolute top-full left-0 w-[280px] bg-[#f8f9f9] rounded-b-[12px] shadow-xl z-50 hidden group-hover:block transition-all duration-300">
+              {[
+                { name: "Սմարթֆոնի համար", to: "/smartfonihamr" },
+                { name: "Տան համար - ԿՈՍՄՈ", to: "/home-cosmo" },
+                { name: "Տան համար - ԿՈՄԲՈ", to: "/home-combo" },
+                { name: "Համակարգչի/պլանշետի համար", to: "/devices" },
+                { name: "Team 4G", to: "/team-4g" },
+              ].map(({ name, to }, idx) => (
+                <li
+                  key={idx}
+                  className="border-b border-[#ebedef] list-none last:border-none transition-colors duration-200"
+                >
+                  <Link
+                    to={to}
+                    className="block w-full px-[20px] py-[10px] text-[16px] text-[#2c3843] hover:text-blue-600 no-underline"
+                  >
+                    {name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li className="relative group">
+            <p className="cursor-pointer text-[#2c3843] font-medium text-[16px] transition-colors duration-200 hover:text-blue-600">
+              Ծառայություններ
+            </p>
+            <ul className="absolute top-full left-0 w-[250px] list-none bg-[#f8f9f9] rounded-b-[12px] shadow-xl z-50 hidden group-hover:block transition-all duration-300">
+              {[
+                { name: "TeamTV", to: "/team-tv" },
+                { name: "Վճարում և համալրում", to: "/payments" },
+                { name: "Զվարճանք", to: "/entertainment" },
+                { name: "Զանգեր և անվտանգություն", to: "/calls-security" },
+              ].map(({ name, to }, idx) => (
+                <li
+                  key={idx}
+                  className="border-b border-[#ebedef] last:border-none transition-colors duration-200"
+                >
+                  <Link
+                    to={to}
+                    className="block w-full px-[20px] py-[10px] text-[16px] text-[#2c3843] hover:text-blue-600 no-underline"
+                  >
+                    {name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li className="relative group">
+            <p className="cursor-pointer text-[#2c3843] font-medium text-[16px]  transition-colors duration-200 hover:text-blue-600">
+              Ռոումինգ
+            </p>
+            <ul className="absolute top-full left-0 w-[250px] list-none bg-[#f8f9f9] rounded-b-[12px] shadow-xl z-50 hidden group-hover:block transition-all duration-300">
+              {[
+                { name: "Ռոումինգ", to: "/roaming" },
+                { name: "Միջազգային կապ", to: "/international-calls" },
+                { name: "Օգտակար տեղեկատվություն", to: "/useful-info" },
+                { name: "Ծառայություններ", to: "/services" },
+              ].map(({ name, to }, idx) => (
+                <li
+                  key={idx}
+                  className="border-b border-[#ebedef] last:border-none transition-colors duration-200"
+                >
+                  <Link
+                    to={to}
+                    className="block w-full px-[20px] py-[10px] text-[16px] text-[#2c3843] hover:text-blue-600 no-underline"
+                  >
+                    {name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li className="relative group">
+            <p className="cursor-pointer text-[#2c3843] font-medium text-[16px]   transition-colors duration-200 hover:text-blue-600">
+              Առցանց խանութ
+            </p>
+            <ul className="absolute top-full left-0 w-[220px] list-none bg-[#f8f9f9] rounded-b-[12px] shadow-xl z-50 hidden group-hover:block transition-all duration-300">
+              {[
+                { name: "E-shop", to: "/eshop" },
+                { name: "Առցանց ապառիկ", to: "/online-credit" },
+                { name: "Բաժանորդագրություն", to: "/subscription" },
+              ].map(({ name, to }, idx) => (
+                <li
+                  key={idx}
+                  className="border-b border-[#ebedef] last:border-none transition-colors duration-200"
+                >
+                  <Link
+                    to={to}
+                    className="block w-full px-[20px] py-[10px] text-[16px] text-[#2c3843] hover:text-blue-600 no-underline"
+                  >
+                    {name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
+          <li className="relative group">
+            <p className="cursor-pointer text-[#2c3843] font-medium text-[16px]   transition-colors duration-200 hover:text-blue-600">
+              Առաջարկներ
+            </p>
+            <ul className="absolute top-full left-0 w-[250px] list-none bg-[#f8f9f9] rounded-b-[12px] shadow-xl z-50 hidden group-hover:block transition-all duration-300">
+              {[
+                { name: "Շեյքի՛ր և Շահի՛ր", to: "/share-and-win" },
+                { name: "Team Բոնուս", to: "/team-bonus" },
+                { name: "Ակցիաներ", to: "/promotions" },
+                { name: "MobiBattle", to: "/mobibattle" },
+                { name: "GeForce Games", to: "/geforce-games" },
+              ].map(({ name, to }, idx) => (
+                <li
+                  key={idx}
+                  className="border-b border-[#ebedef] last:border-none transition-colors duration-200"
+                >
+                  <Link
+                    to={to}
+                    className="block w-full px-[20px] py-[10px] text-[16px] text-[#2c3843] hover:text-blue-600 no-underline"
+                  >
+                    {name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
+
+          <li className="relative group">
+            <p className="cursor-pointer text-[#2c3843] font-medium text-[16px] transition-colors duration-200 hover:text-blue-600">
+              Օգնություն
+            </p>
+            <ul className="absolute top-full left-0 w-[300px] bg-[#f8f9f9] list-none rounded-b-[12px] shadow-xl z-50 hidden group-hover:block transition-all duration-300">
+              {[
+                { name: "Հաճախ տրվող հարցեր", to: "/faq" },
+                { name: "Սարքերի կարգավորումներ", to: "/device-settings" },
+                { name: "Բաժանորդային սպասարկում", to: "/subscriber-service" },
+                { name: "USSD հրահանգներ և օգտակար համարներ", to: "/ussd-instructions" },
+              ].map(({ name, to }, idx) => (
+                <li
+                  key={idx}
+                  className="border-b border-[#ebedef] last:border-none transition-colors duration-200"
+                >
+                  <Link
+                    to={to}
+                    className="block w-full px-[20px] py-[10px] text-[16px] text-[#2c3843] hover:text-blue-600 no-underline"
+                  >
+                    {name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </li>
         </ul>
       </nav>
     </div>
